@@ -1,2 +1,12 @@
+# Dependencies
+node_modules/
+
 # Local Netlify folder
-.netlify
+.netlify/
+
+# Environment files
+.env
+.env.local
+
+# Setup scripts
+setup-db.js
