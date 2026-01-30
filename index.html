@@ -102,9 +102,11 @@
         }
 
         .logo img {
-            height: 40px;
+            max-height: 50px;
+            max-width: 180px;
             width: auto;
-            filter: brightness(0) invert(1);
+            height: auto;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -1371,9 +1373,11 @@
         }
 
         .footer-logo img {
-            height: 35px;
+            max-height: 45px;
+            max-width: 160px;
             width: auto;
-            filter: brightness(0) invert(1);
+            height: auto;
+            object-fit: contain;
         }
 
         .footer-copy {
@@ -1966,7 +1970,7 @@
                 <h2>Ready to Stop Losing Customers to Your Competitors?</h2>
                 <p>Get a free, no-obligation quote for your new website. Most quotes delivered within 24 hours.</p>
                 <div class="urgency-badge">
-                    <span>Limited availability - Only taking 3 new projects this month</span>
+                    <span>$100 non-refundable consultation fee required to book</span>
                 </div>
             </div>
 
@@ -2010,14 +2014,14 @@
                         <textarea id="project" name="project" placeholder="What kind of business do you have? What do you want your new website to accomplish?" required></textarea>
                     </div>
 
-                    <button type="submit" class="form-submit">Get My Free Quote</button>
-                    <p class="form-note">We'll respond within 24 hours. No spam, no sales pressure.</p>
+                    <button type="submit" class="form-submit">Book Consultation - $100</button>
+                    <p class="form-note">$100 non-refundable fee secures your discovery call. Applied to project if you proceed.</p>
                 </form>
 
                 <div class="success-message" id="successMessage">
                     <div class="success-icon">✓</div>
                     <h3>Thank You!</h3>
-                    <p>Your inquiry has been received. We'll be in touch within 24 hours with your custom quote.</p>
+                    <p>Your inquiry has been received. Once payment is confirmed, we'll reach out within 24 hours to schedule your discovery call.</p>
                 </div>
             </div>
         </div>
@@ -2098,6 +2102,13 @@
                 const result = await response.json();
 
                 if (response.ok && result.success) {
+                    // If payment is required, redirect to payment page
+                    if (result.payment_required && result.payment_url) {
+                        submitBtn.textContent = 'Redirecting to payment...';
+                        window.location.href = result.payment_url;
+                        return;
+                    }
+                    // Otherwise show success message
                     form.style.display = 'none';
                     successMessage.classList.add('show');
                 } else {

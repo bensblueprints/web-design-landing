@@ -7,6 +7,92 @@ const GHL_API_URL = 'https://services.leadconnectorhq.com';
 const GHL_API_KEY = process.env.GHL_API_KEY;
 const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
 
+// Airwallex API configuration
+const AIRWALLEX_API_URL = process.env.AIRWALLEX_API_URL || 'https://api.airwallex.com';
+const AIRWALLEX_CLIENT_ID = process.env.AIRWALLEX_CLIENT_ID;
+const AIRWALLEX_API_KEY = process.env.AIRWALLEX_API_KEY;
+
+// Get Airwallex access token
+async function getAirwallexToken() {
+  try {
+    const response = await fetch(`${AIRWALLEX_API_URL}/api/v1/authentication/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-client-id': AIRWALLEX_CLIENT_ID,
+        'x-api-key': AIRWALLEX_API_KEY
+      }
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error('Airwallex Auth Error:', result);
+      return null;
+    }
+
+    return result.token;
+  } catch (error) {
+    console.error('Airwallex Auth API Error:', error);
+    return null;
+  }
+}
+
+// Create Airwallex payment link for $100 consultation fee
+async function createAirwallexPaymentLink(leadData, leadId) {
+  const token = await getAirwallexToken();
+  if (!token) return null;
+
+  const { name, email } = leadData;
+
+  // Split name into first and last
+  const nameParts = name.trim().split(' ');
+  const firstName = nameParts[0] || '';
+  const lastName = nameParts.slice(1).join(' ') || '';
+
+  const paymentLinkPayload = {
+    amount: 100,
+    currency: 'USD',
+    title: 'Web Design Consultation Fee',
+    description: 'Non-refundable $100 consultation fee to schedule your discovery call with Advanced Marketing.',
+    reusable: false,
+    reference: `LEAD-${leadId}`,
+    shopper: {
+      email: email,
+      first_name: firstName,
+      last_name: lastName
+    },
+    collectable_shopper_info: {
+      phone_number: false,
+      shipping_address: false
+    }
+  };
+
+  try {
+    const response = await fetch(`${AIRWALLEX_API_URL}/api/v1/pa/payment_links/create`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(paymentLinkPayload)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error('Airwallex Payment Link Error:', result);
+      return null;
+    }
+
+    console.log('Airwallex Payment Link created:', result.id);
+    return result;
+  } catch (error) {
+    console.error('Airwallex Payment Link API Error:', error);
+    return null;
+  }
+}
+
 // Create contact in GoHighLevel
 async function createGHLContact(leadData) {
   const { name, company, email, phone, budget, project } = leadData;
@@ -24,7 +110,7 @@ async function createGHLContact(leadData) {
     companyName: company || '',
     locationId: GHL_LOCATION_ID,
     source: 'Advanced Marketing Landing Page',
-    tags: ['web-design-lead', budget ? `budget-${budget}` : 'budget-unknown'],
+    tags: ['web-design-lead', 'pending-payment', budget ? `budget-${budget}` : 'budget-unknown'],
     customFields: [
       { key: 'budget', value: budget || 'Not specified' },
       { key: 'project_details', value: project || 'Not provided' }
@@ -169,6 +255,7 @@ exports.handler = async (event, context) => {
       RETURNING id, created_at
     `;
     console.log('Lead saved to DB:', dbResult[0]);
+    const leadId = dbResult[0].id;
 
     // 2. Create contact in GoHighLevel
     let ghlContact = null;
@@ -185,6 +272,14 @@ exports.handler = async (event, context) => {
       console.log('GHL integration skipped - missing API credentials');
     }
 
+    // 4. Create Airwallex payment link for $100 consultation fee
+    let paymentLink = null;
+    if (AIRWALLEX_CLIENT_ID && AIRWALLEX_API_KEY) {
+      paymentLink = await createAirwallexPaymentLink(data, leadId);
+    } else {
+      console.log('Airwallex integration skipped - missing API credentials');
+    }
+
     return {
       statusCode: 200,
       headers: {
@@ -193,10 +288,14 @@ exports.handler = async (event, context) => {
       },
       body: JSON.stringify({
         success: true,
-        message: 'Thank you! We\'ll be in touch within 24 hours.',
-        lead_id: dbResult[0].id,
+        message: paymentLink
+          ? 'Please complete your $100 consultation fee to secure your meeting slot.'
+          : 'Thank you! We\'ll be in touch within 24 hours.',
+        lead_id: leadId,
         ghl_contact_id: ghlContact?.id || null,
-        ghl_opportunity_id: ghlOpportunity?.id || null
+        ghl_opportunity_id: ghlOpportunity?.id || null,
+        payment_url: paymentLink?.url || null,
+        payment_required: !!paymentLink
       })
     };
 
