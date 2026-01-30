@@ -775,7 +775,7 @@
         </div>
 
         <div class="form-container">
-            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form class="contact-form" id="contactForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -814,9 +814,7 @@
                     <textarea id="project" name="project" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
                 </div>
 
-                <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
-                <input type="hidden" name="form-name" value="contact">
-
+                
                 <button type="submit" class="form-submit">Send Inquiry</button>
             </form>
 
@@ -841,23 +839,41 @@
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const formData = new FormData(form);
+            const submitBtn = form.querySelector('.form-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = {
+                name: document.getElementById('name').value,
+                company: document.getElementById('company').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                budget: document.getElementById('budget').value,
+                project: document.getElementById('project').value
+            };
 
             try {
-                const response = await fetch('/', {
+                const response = await fetch('/.netlify/functions/submit-lead', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString()
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
                 });
 
-                if (response.ok) {
+                const result = await response.json();
+
+                if (response.ok && result.success) {
                     form.style.display = 'none';
                     successMessage.classList.add('show');
                 } else {
-                    alert('There was an error. Please try again.');
+                    alert(result.error || 'There was an error. Please try again.');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
                 }
             } catch (error) {
                 alert('There was an error. Please try again.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }
         });
 

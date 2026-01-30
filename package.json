@@ -1,0 +1,23 @@
+{
+  "name": "web-design-landing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bensblueprints/web-design-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bensblueprints/web-design-landing/issues"
+  },
+  "homepage": "https://github.com/bensblueprints/web-design-landing#readme",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2"
+  }
+}
