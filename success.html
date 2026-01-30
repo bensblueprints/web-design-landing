@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmed - Schedule Your Call | Advanced Marketing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d0d0d;
+            --bg-secondary: #141414;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #c17f59;
+            --accent-light: #d4a484;
+            --success: #5a9a6e;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .success-container {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 3rem;
+        }
+
+        .logo img {
+            max-height: 50px;
+            width: auto;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--success), #4a8a5e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .next-step {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-label {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .next-step h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .next-step p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(193, 127, 89, 0.3);
+        }
+
+        .calendar-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(193, 127, 89, 0.4);
+        }
+
+        .calendar-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .receipt-info {
+            background: rgba(90, 154, 110, 0.1);
+            border: 1px solid rgba(90, 154, 110, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .receipt-info h3 {
+            color: var(--success);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .receipt-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .what-happens {
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .what-happens h3 {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .timeline-number {
+            width: 28px;
+            height: 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            padding-top: 0.25rem;
+        }
+
+        .timeline-content strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .next-step {
+                padding: 1.5rem;
+            }
+
+            .calendar-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="logo">
+            <a href="https://advancedmarketing.co">
+                <img src="./assets/logo.png" alt="Advanced Marketing">
+            </a>
+        </div>
+
+        <div class="success-icon">✓</div>
+
+        <h1>Payment Confirmed!</h1>
+        <p class="subtitle">Your $100 consultation fee has been received. You're one step away from transforming your online presence.</p>
+
+        <div class="receipt-info">
+            <h3>Receipt Sent</h3>
+            <p>A confirmation email with your receipt has been sent to your inbox.</p>
+        </div>
+
+        <div class="next-step">
+            <span class="step-label">Next Step</span>
+            <h2>Schedule Your Discovery Call</h2>
+            <p>Pick a time that works for you. We'll discuss your business goals, current challenges, and create a custom strategy for your new website.</p>
+
+            <a href="https://api.leadconnectorhq.com/widget/booking/strategy-session" class="calendar-btn" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Schedule My Call
+            </a>
+        </div>
+
+        <div class="what-happens">
+            <h3>What Happens Next</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <strong>Schedule Your Call</strong>
+                        <span>Pick a 45-minute strategy session slot</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <strong>Discovery Session</strong>
+                        <span>We'll dive deep into your business and goals</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <strong>Custom Proposal</strong>
+                        <span>Receive a tailored plan for your new website</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

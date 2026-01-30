@@ -50,6 +50,9 @@ async function createAirwallexPaymentLink(leadData, leadId) {
   const firstName = nameParts[0] || '';
   const lastName = nameParts.slice(1).join(' ') || '';
 
+  // Get the base URL from environment or default to production
+  const siteUrl = process.env.URL || 'https://bens-web-design-studio.netlify.app';
+
   const paymentLinkPayload = {
     amount: 100,
     currency: 'USD',
@@ -65,7 +68,9 @@ async function createAirwallexPaymentLink(leadData, leadId) {
     collectable_shopper_info: {
       phone_number: false,
       shipping_address: false
-    }
+    },
+    success_url: `${siteUrl}/success.html?lead_id=${leadId}`,
+    cancel_url: `${siteUrl}/#contact`
   };
 
   try {
