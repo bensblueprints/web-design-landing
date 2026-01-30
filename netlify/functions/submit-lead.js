@@ -23,7 +23,7 @@ async function createGHLContact(leadData) {
     phone,
     companyName: company || '',
     locationId: GHL_LOCATION_ID,
-    source: 'Web Design Landing Page',
+    source: 'Advanced Marketing Landing Page',
     tags: ['web-design-lead', budget ? `budget-${budget}` : 'budget-unknown'],
     customFields: [
       { key: 'budget', value: budget || 'Not specified' },
@@ -74,7 +74,7 @@ async function createGHLOpportunity(contact, leadData) {
   const opportunityPayload = {
     pipelineId: process.env.GHL_PIPELINE_ID,
     locationId: GHL_LOCATION_ID,
-    name: `Web Design - ${contact.firstName} ${contact.lastName}`.trim(),
+    name: `Advanced Marketing - ${contact.firstName} ${contact.lastName}`.trim(),
     pipelineStageId: process.env.GHL_STAGE_NEW_LEAD,
     status: 'open',
     contactId: contact.id,
