@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/bensblueprints/web-design-landing#readme",
   "dependencies": {
-    "@neondatabase/serverless": "^1.0.2"
+    "@neondatabase/serverless": "^1.0.2",
+    "@playwright/test": "^1.58.1"
   }
 }

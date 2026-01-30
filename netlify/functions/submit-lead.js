@@ -11,6 +11,7 @@ const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
 const AIRWALLEX_API_URL = process.env.AIRWALLEX_API_URL || 'https://api.airwallex.com';
 const AIRWALLEX_CLIENT_ID = process.env.AIRWALLEX_CLIENT_ID;
 const AIRWALLEX_API_KEY = process.env.AIRWALLEX_API_KEY;
+const AIRWALLEX_FALLBACK_PAYMENT_URL = process.env.AIRWALLEX_FALLBACK_PAYMENT_URL;
 
 // Get Airwallex access token
 async function getAirwallexToken() {
@@ -281,7 +282,15 @@ exports.handler = async (event, context) => {
     let paymentLink = null;
     if (AIRWALLEX_CLIENT_ID && AIRWALLEX_API_KEY) {
       paymentLink = await createAirwallexPaymentLink(data, leadId);
-    } else {
+    }
+
+    // Use fallback payment URL if API fails but fallback is configured
+    if (!paymentLink && AIRWALLEX_FALLBACK_PAYMENT_URL) {
+      console.log('Using fallback Airwallex payment URL');
+      paymentLink = { url: AIRWALLEX_FALLBACK_PAYMENT_URL };
+    }
+
+    if (!paymentLink && !AIRWALLEX_CLIENT_ID) {
       console.log('Airwallex integration skipped - missing API credentials');
     }
 
