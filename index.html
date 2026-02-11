@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1397025095456457');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1397025095456457&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Marketing | Websites That Bring Customers Through Your Door</title>
@@ -1527,6 +1544,890 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ============================================
+           EXAMPLES GALLERY
+           ============================================ */
+        .examples {
+            padding: 8rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .examples-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .examples-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.25rem;
+        }
+
+        .example-card {
+            text-decoration: none;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .example-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--card-color, var(--accent));
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .example-preview {
+            aspect-ratio: 16/10;
+            background: var(--card-bg, var(--bg-elevated));
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .example-preview::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-bottom: 3px solid var(--card-color, var(--accent));
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 2;
+        }
+
+        .example-card:hover .example-preview::before {
+            opacity: 1;
+        }
+
+        .example-preview img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.4s ease;
+        }
+
+        .example-card:hover .example-preview img {
+            transform: scale(1.05);
+        }
+
+        .preview-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .preview-icon {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            transition: transform 0.4s;
+        }
+
+        .example-card:hover .preview-icon {
+            transform: scale(1.15);
+        }
+
+        .example-info {
+            padding: 1rem 1.25rem;
+        }
+
+        .example-info h3 {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .example-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .buy-btn {
+            display: block;
+            width: calc(100% - 2.5rem);
+            margin: 0 1.25rem 1.25rem;
+            padding: 0.75rem 1rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(193, 127, 89, 0.3);
+        }
+
+        .buy-price {
+            font-weight: 700;
+        }
+
+        .example-preview.light {
+            color: var(--bg-primary);
+        }
+
+        @media (max-width: 1200px) {
+            .examples-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .examples-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .examples-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        
+
+    
+        /* Service Industries Dropdown - Clean Grid Design */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted, #a8a5a0);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .nav-dropdown-trigger:hover {
+            color: var(--text, #fff);
+        }
+
+        .nav-dropdown-trigger svg {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-trigger svg {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            width: 480px;
+            background: linear-gradient(135deg, rgba(24, 24, 28, 0.98) 0%, rgba(18, 18, 22, 0.98) 100%);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.25rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05) inset;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .nav-dropdown-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.25rem;
+        }
+
+        .nav-dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 0.85rem;
+            color: rgba(255,255,255,0.75) !important;
+            text-decoration: none !important;
+            font-size: 0.82rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background: transparent !important;
+            clip-path: none !important;
+            white-space: nowrap;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: rgba(255,255,255,0.08) !important;
+            color: #fff !important;
+            transform: none !important;
+        }
+
+        .nav-dropdown-menu a .industry-icon {
+            font-size: 1rem;
+            width: 1.25rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .nav-dropdown-menu a:hover .industry-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .nav-dropdown-menu a.active {
+            background: rgba(var(--accent-rgb, 193, 127, 89), 0.15) !important;
+            color: var(--accent, #c17f59) !important;
+        }
+
+        @media (max-width: 900px) {
+            .nav-dropdown-menu {
+                width: 360px;
+            }
+            .nav-dropdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-dropdown {
+                display: none;
+            }
+        }
+
+    
+        
+
+    
+        
+
+    
+        
+
+    
+        
+
+    
+        /* =============================================
+           FIXED MOBILE MENU - Proper Layering
+           ============================================= */
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1100;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+        }
+
+        .mobile-menu-toggle span::before,
+        .mobile-menu-toggle span::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .mobile-menu-toggle span::before { top: -6px; }
+        .mobile-menu-toggle span::after { bottom: -6px; }
+
+        .mobile-menu-toggle.active {
+            background: transparent;
+            border-color: transparent;
+            position: fixed;
+            top: 1rem;
+            right: 1.25rem;
+        }
+
+        .mobile-menu-toggle.active span {
+            background: transparent;
+        }
+
+        .mobile-menu-toggle.active span::before {
+            top: 0;
+            transform: rotate(45deg);
+            background: #fff;
+        }
+
+        .mobile-menu-toggle.active span::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+            background: #fff;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 1000;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Slide Menu - Full Screen */
+        .mobile-slide-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            background: #0a0a0a;
+            padding: 5rem 1.5rem 2rem;
+            transform: translateY(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1050;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .mobile-slide-menu.active {
+            transform: translateY(0);
+        }
+
+        /* Hide the header/close button - we use the toggle X instead */
+        .mobile-menu-header {
+            display: none;
+        }
+
+        /* Mobile Menu Content */
+        .mobile-menu-content {
+            padding: 0;
+        }
+
+        /* Main Navigation Links */
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-nav-links a {
+            display: block;
+            padding: 1.25rem 0;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-links a:first-child {
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .mobile-nav-links a:hover,
+        .mobile-nav-links a:active {
+            color: var(--accent, #c9a962);
+            padding-left: 0.5rem;
+        }
+
+        /* CTA Button in Menu */
+        .mobile-menu-cta {
+            margin-bottom: 2.5rem;
+        }
+
+        .mobile-menu-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent, #c9a962) 0%, var(--accent-dark, #a88a45) 100%);
+            color: #000 !important;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(201, 169, 98, 0.3);
+        }
+
+        .mobile-menu-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 169, 98, 0.4);
+        }
+
+        /* Industries Section */
+        .mobile-industries-section {
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .mobile-industries-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 1rem;
+        }
+
+        .mobile-industries-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+        }
+
+        .mobile-industries-grid a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1rem;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.25s ease;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .mobile-industries-grid a:hover,
+        .mobile-industries-grid a.active {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.15);
+            color: #fff;
+        }
+
+        .mobile-industries-grid a .industry-icon {
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+        /* Body Lock */
+        body.menu-open {
+            overflow: hidden !important;
+            position: fixed !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* ===== MOBILE BREAKPOINT ===== */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle,
+            .mobile-menu-overlay,
+            .mobile-slide-menu {
+                display: flex;
+            }
+
+            .mobile-slide-menu {
+                display: block;
+            }
+
+            /* CRITICAL: Completely hide desktop nav elements */
+            .nav-dropdown,
+            .nav-links,
+            .nav-cta,
+            .header-cta,
+            nav .nav-links,
+            header .nav-links,
+            nav > .container > .nav-links,
+            .header-content .nav-links {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+                position: absolute !important;
+                left: -9999px !important;
+            }
+
+            /* Navigation bar */
+            nav, header {
+                padding: 0.75rem 0;
+                position: relative;
+                z-index: 100;
+            }
+
+            nav .container,
+            header .container,
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo img,
+            .header-content .logo {
+                height: 32px !important;
+                max-height: 32px !important;
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            /* Hero Section */
+            .hero {
+                min-height: auto;
+                padding: 4.5rem 0 3rem;
+            }
+
+            .hero-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            .hero-visual {
+                order: 2;
+                width: 100%;
+            }
+
+            .hero-label,
+            .hero-badge {
+                font-size: 0.65rem;
+                letter-spacing: 0.2em;
+                margin-bottom: 0.75rem;
+                display: inline-block;
+            }
+
+            .hero h1 {
+                font-size: 2rem !important;
+                line-height: 1.12 !important;
+                margin-bottom: 1rem;
+                letter-spacing: -0.02em;
+            }
+
+            .hero-text,
+            .hero-subtitle,
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.65;
+                margin-bottom: 1.5rem;
+                opacity: 0.85;
+            }
+
+            /* Hero Stats */
+            .hero-stats {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                padding: 1.25rem 0;
+                margin-bottom: 1.5rem;
+            }
+
+            .stat-item,
+            .stat {
+                text-align: center;
+            }
+
+            .stat-number {
+                font-size: 2.25rem !important;
+                line-height: 1.1;
+                font-weight: 700;
+            }
+
+            .stat-label {
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                opacity: 0.65;
+                margin-top: 0.25rem;
+            }
+
+            /* Hero CTAs */
+            .hero-ctas {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                width: 100%;
+            }
+
+            .hero-ctas .btn,
+            .hero-ctas a,
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+                font-size: 0.85rem;
+                text-align: center;
+            }
+
+            /* Browser Mockup */
+            .browser-frame,
+            .browser-mockup {
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+            }
+
+            .floating-badge,
+            .floating-testimonial,
+            .floating-card {
+                display: none;
+            }
+
+            /* Sections */
+            section {
+                padding: 3.5rem 0;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .section-label {
+                font-size: 0.6rem;
+                letter-spacing: 0.25em;
+                margin-bottom: 0.75rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem !important;
+                line-height: 1.2;
+                margin-bottom: 0.75rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                opacity: 0.8;
+            }
+
+            /* Cards */
+            .pain-grid,
+            .problems-grid,
+            .features-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .pain-card,
+            .problem-card,
+            .feature-card {
+                padding: 1.5rem;
+                border-radius: 12px;
+            }
+
+            .pain-card h3,
+            .problem-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .pain-card p,
+            .problem-card p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            /* Solution */
+            .solution-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+
+            .solution-content h2 {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+
+            .solution-text {
+                font-size: 0.95rem;
+                text-align: center;
+            }
+
+            /* Pricing */
+            .pricing-card {
+                padding: 2rem 1.5rem;
+                border-radius: 14px;
+            }
+
+            .pricing-title {
+                font-size: 1.3rem;
+            }
+
+            .pricing-number {
+                font-size: 3.25rem;
+            }
+
+            .pricing-features li {
+                font-size: 0.9rem;
+                padding: 0.8rem 0;
+            }
+
+            .pricing-cta {
+                padding: 1rem;
+                font-size: 0.9rem;
+                border-radius: 8px;
+            }
+
+            /* Contact Form */
+            .contact-section {
+                padding: 3rem 0;
+            }
+
+            .contact-form-container {
+                padding: 1.75rem;
+                border-radius: 14px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 1rem;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+            .form-submit {
+                padding: 1rem;
+                font-size: 0.95rem;
+                border-radius: 8px;
+            }
+
+            /* Examples Grid */
+            .examples-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .example-card {
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .example-info {
+                padding: 0.85rem;
+            }
+
+            .example-info h3 {
+                font-size: 0.8rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .example-info p {
+                font-size: 0.7rem;
+            }
+
+            .buy-btn {
+                margin: 0 0.6rem 0.6rem;
+                padding: 0.6rem;
+                font-size: 0.75rem;
+                border-radius: 6px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 2.5rem 0;
+                text-align: center;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 1.75rem !important;
+            }
+
+            .section-title {
+                font-size: 1.4rem !important;
+            }
+
+            .mobile-industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-nav-links a {
+                font-size: 1.3rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1535,11 +2436,37 @@
         <div class="container">
             <a href="https://advancedmarketing.co" class="logo"><img src="./assets/logo.png" alt="Advanced Marketing"></a>
             <div class="nav-links">
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-trigger">
+                        Service Industries
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-grid">
+                                                        <a href="/roofer/"><span class="industry-icon">🏠</span>Roofer</a>
+                            <a href="/lawyer/"><span class="industry-icon">⚖️</span>Lawyer</a>
+                            <a href="/doctor/"><span class="industry-icon">🩺</span>Doctor</a>
+                            <a href="/aesthetician/"><span class="industry-icon">✨</span>Aesthetician</a>
+                            <a href="/accountant/"><span class="industry-icon">📊</span>Accountant</a>
+                            <a href="/dentist/"><span class="industry-icon">🦷</span>Dentist</a>
+                            <a href="/real-estate/"><span class="industry-icon">🏡</span>Real Estate</a>
+                            <a href="/plumber/"><span class="industry-icon">🔧</span>Plumber</a>
+                            <a href="/hvac/"><span class="industry-icon">❄️</span>HVAC</a>
+                            <a href="/personal-trainer/"><span class="industry-icon">💪</span>Personal Trainer</a>
+                            <a href="/restaurant/"><span class="industry-icon">🍽️</span>Restaurant</a>
+                            <a href="/wedding-photographer/"><span class="industry-icon">📸</span>Wedding Photographer</a>
+                            <a href="/auto-repair/"><span class="industry-icon">🚗</span>Auto Repair</a>
+                            <a href="/chiropractor/"><span class="industry-icon">🦴</span>Chiropractor</a>
+                            <a href="/financial-advisor/"><span class="industry-icon">💰</span>Financial Advisor</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#examples">Examples</a>
                 <a href="#process">Process</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
-                <a href="#contact" class="nav-cta">Get Free Quote</a>
             </div>
+            <a href="#contact" class="nav-cta">Get Started</a>
         </div>
     </nav>
 
@@ -1547,27 +2474,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span>Now Accepting New Projects</span>
-                </div>
-                <h1>Your Competitors Have<br>Better Websites.<br><span class="highlight">Let's Fix That.</span></h1>
-                <p class="hero-subtitle">Stop losing customers to businesses with outdated websites. We build stunning, fast-loading sites that turn visitors into paying customers.</p>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">47%</div>
-                        <div class="stat-label">More leads on average</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">2.3s</div>
-                        <div class="stat-label">Avg. load time</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">14</div>
-                        <div class="stat-label">Days to launch</div>
-                    </div>
-                </div>
-
+                <span class="hero-badge">Professional Web Design</span>
+                <h1>Websites That Actually <em>Convert</em></h1>
+                <p class="hero-subtitle">Stop losing customers to outdated websites. Get a professional, high-converting site designed specifically for your industry.</p>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn btn-primary">Get Your Free Quote</a>
                     <a href="#process" class="btn btn-secondary">See How It Works</a>
@@ -1771,6 +2680,184 @@
         </div>
     </section>
 
+    <!-- SECTION: EXAMPLES GALLERY -->
+    <section class="examples" id="examples">
+        <div class="container">
+            <div class="examples-header reveal">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">See What We Can Build For You</h2>
+                <p class="section-subtitle">Browse our collection of industry-specific website designs. Click any example to see the full site.</p>
+            </div>
+
+            <div class="examples-grid">
+                <div class="example-card reveal" style="--card-color: #ff6b35;">
+                    <a href="/examples/roofer/" class="example-preview">
+                        <img src="/screenshots/roofer.png" alt="Roofer website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Roofer</h3>
+                        <p>Bold industrial design</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #c9a962;">
+                    <a href="/examples/lawyer/" class="example-preview">
+                        <img src="/screenshots/lawyer.png" alt="Lawyer website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Lawyer</h3>
+                        <p>Luxury editorial style</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #0d9488;">
+                    <a href="/examples/doctor/" class="example-preview">
+                        <img src="/screenshots/doctor.png" alt="Doctor website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Doctor</h3>
+                        <p>Clean & trustworthy</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #c9a396;">
+                    <a href="/examples/aesthetician/" class="example-preview">
+                        <img src="/screenshots/aesthetician.png" alt="Aesthetician website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Aesthetician</h3>
+                        <p>Soft luxury spa</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #059669;">
+                    <a href="/examples/accountant/" class="example-preview">
+                        <img src="/screenshots/accountant.png" alt="Accountant website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Accountant</h3>
+                        <p>Professional geometric</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #0ea5e9;">
+                    <a href="/examples/dentist/" class="example-preview">
+                        <img src="/screenshots/dentist.png" alt="Dentist website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Dentist</h3>
+                        <p>Bright & friendly</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #c9a050;">
+                    <a href="/examples/real-estate/" class="example-preview">
+                        <img src="/screenshots/real-estate.png" alt="Real Estate website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Real Estate</h3>
+                        <p>Luxurious & elegant</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #ed8936;">
+                    <a href="/examples/plumber/" class="example-preview">
+                        <img src="/screenshots/plumber.png" alt="Plumber website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Plumber</h3>
+                        <p>Bold & trustworthy</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #0284c7;">
+                    <a href="/examples/hvac/" class="example-preview">
+                        <img src="/screenshots/hvac.png" alt="HVAC website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>HVAC</h3>
+                        <p>Cool & technical</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #84cc16;">
+                    <a href="/examples/personal-trainer/" class="example-preview">
+                        <img src="/screenshots/personal-trainer.png" alt="Personal Trainer website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Personal Trainer</h3>
+                        <p>Energetic & powerful</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #d97706;">
+                    <a href="/examples/restaurant/" class="example-preview">
+                        <img src="/screenshots/restaurant.png" alt="Restaurant website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Restaurant</h3>
+                        <p>Warm & inviting</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #c9a396;">
+                    <a href="/examples/wedding-photographer/" class="example-preview">
+                        <img src="/screenshots/wedding-photographer.png" alt="Wedding Photographer website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Wedding Photographer</h3>
+                        <p>Romantic & elegant</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #dc2626;">
+                    <a href="/examples/auto-repair/" class="example-preview">
+                        <img src="/screenshots/auto-repair.png" alt="Auto Repair website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Auto Repair</h3>
+                        <p>Bold & industrial</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #6b8e6b;">
+                    <a href="/examples/chiropractor/" class="example-preview">
+                        <img src="/screenshots/chiropractor.png" alt="Chiropractor website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Chiropractor</h3>
+                        <p>Calm & healing</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+
+                <div class="example-card reveal" style="--card-color: #2563eb;">
+                    <a href="/examples/financial-advisor/" class="example-preview">
+                        <img src="/screenshots/financial-advisor.png" alt="Financial Advisor website example" loading="lazy">
+                    </a>
+                    <div class="example-info">
+                        <h3>Financial Advisor</h3>
+                        <p>Professional & trustworthy</p>
+                    </div>
+                    <a href="#contact" class="buy-btn">Buy This Website - <span class="buy-price">$1,000</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECTION 5: PROCESS -->
     <section class="process" id="process">
         <div class="container">
@@ -1963,6 +3050,51 @@
         </div>
     </section>
 
+    <!-- SECTION 7.5: BLOG/RESOURCES SHOWCASE -->
+    <section class="blog-showcase" style="padding: 100px 0; background: linear-gradient(135deg, #f7fafc 0%, #e6f4f1 100%);">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 60px;">
+                <h2 class="section-title" style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; font-weight: 700;">Industry Growth Strategies</h2>
+                <p class="section-subtitle" style="font-size: 20px; color: #718096; max-width: 700px; margin: 0 auto;">Expert insights to help you grow your business and generate more leads</p>
+            </div>
+            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto;">
+                <article class="blog-card reveal" style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <div class="blog-card-content" style="padding: 36px;">
+                        <div class="blog-category" style="color: #1a5f4f; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Accountants</div>
+                        <h3 style="font-size: 24px; margin-bottom: 16px; line-height: 1.3; color: #1a202c;">
+                            <a href="/blog/accountant/10-ways-to-get-more-accounting-leads.html" style="color: inherit; text-decoration: none;">10 Ways to Get More Accounting Leads in 2026</a>
+                        </h3>
+                        <p style="color: #718096; margin-bottom: 24px; font-size: 16px; line-height: 1.6;">Proven strategies to fill your pipeline—but only if your lead system isn't broken.</p>
+                        <a href="/blog/accountant/10-ways-to-get-more-accounting-leads.html" style="color: #1a5f4f; font-weight: 600; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">Read Article <span>→</span></a>
+                    </div>
+                </article>
+                <article class="blog-card reveal" style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <div class="blog-card-content" style="padding: 36px;">
+                        <div class="blog-category" style="color: #1a5f4f; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Aestheticians</div>
+                        <h3 style="font-size: 24px; margin-bottom: 16px; line-height: 1.3; color: #1a202c;">
+                            <a href="/blog/aesthetician/instagram-followers-not-booking.html" style="color: inherit; text-decoration: none;">Why Your Instagram Followers Aren't Booking Appointments</a>
+                        </h3>
+                        <p style="color: #718096; margin-bottom: 24px; font-size: 16px; line-height: 1.6;">Thousands of followers but an empty calendar? Here's how to fix it.</p>
+                        <a href="/blog/aesthetician/instagram-followers-not-booking.html" style="color: #1a5f4f; font-weight: 600; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">Read Article <span>→</span></a>
+                    </div>
+                </article>
+                <article class="blog-card reveal" style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <div class="blog-card-content" style="padding: 36px;">
+                        <div class="blog-category" style="color: #1a5f4f; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Auto Repair</div>
+                        <h3 style="font-size: 24px; margin-bottom: 16px; line-height: 1.3; color: #1a202c;">
+                            <a href="/blog/auto-repair/oil-change-customers-to-lifetime-clients.html" style="color: inherit; text-decoration: none;">Turn One-Time Oil Changes Into Lifetime Customers</a>
+                        </h3>
+                        <p style="color: #718096; margin-bottom: 24px; font-size: 16px; line-height: 1.6;">How to build recurring revenue instead of chasing one-off jobs.</p>
+                        <a href="/blog/auto-repair/oil-change-customers-to-lifetime-clients.html" style="color: #1a5f4f; font-weight: 600; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">Read Article <span>→</span></a>
+                    </div>
+                </article>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <p style="color: #718096; font-size: 16px;">Resources for 15+ industries including dentists, lawyers, financial advisors, and more.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- SECTION 8: FINAL CTA / CONTACT -->
     <section class="final-cta" id="contact">
         <div class="container">
@@ -2032,13 +3164,14 @@
         <div class="container">
             <div class="footer-brand">
                 <a href="https://advancedmarketing.co" class="footer-logo"><img src="./assets/logo.png" alt="Advanced Marketing"></a>
-                <p class="footer-copy">&copy; 2025 Advanced Marketing. All rights reserved.</p>
+                <p class="footer-copy">&copy; 2026 Advanced Marketing. All rights reserved.</p>
             </div>
             <div class="footer-links">
+                <a href="#examples">Examples</a>
                 <a href="#process">Process</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
+                <a href="/sitemap.xml">Sitemap</a>
             </div>
         </div>
     </footer>
@@ -2134,5 +3267,158 @@
             });
         });
     </script>
+
+    
+
+
+    
+
+
+    <script>
+    (function() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMobileMenu);
+        } else {
+            initMobileMenu();
+        }
+
+        function initMobileMenu() {
+            // Remove any existing mobile menu elements first
+            document.querySelectorAll('.mobile-slide-menu, .mobile-menu-overlay').forEach(el => el.remove());
+            document.querySelectorAll('.mobile-menu-toggle').forEach(el => el.remove());
+
+            const nav = document.querySelector('nav') || document.querySelector('header');
+            if (!nav) return;
+
+            const container = nav.querySelector('.container') || nav;
+
+            // Create toggle button
+            const toggle = document.createElement('button');
+            toggle.className = 'mobile-menu-toggle';
+            toggle.setAttribute('aria-label', 'Open menu');
+            toggle.innerHTML = '<span></span>';
+
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'mobile-menu-overlay';
+
+            // Create slide menu
+            const slideMenu = document.createElement('div');
+            slideMenu.className = 'mobile-slide-menu';
+
+            // Get CTA
+            const ctaLink = nav.querySelector('.nav-cta, .header-cta, [href="#contact"]');
+            const ctaText = ctaLink ? ctaLink.textContent.trim() : 'Get Started';
+            const ctaHref = ctaLink ? ctaLink.getAttribute('href') : '#contact';
+
+            // Industries
+            const industries = [
+                { path: 'roofer', name: 'Roofer', icon: '🏠' },
+                { path: 'lawyer', name: 'Lawyer', icon: '⚖️' },
+                { path: 'doctor', name: 'Doctor', icon: '🩺' },
+                { path: 'aesthetician', name: 'Aesthetician', icon: '✨' },
+                { path: 'accountant', name: 'Accountant', icon: '📊' },
+                { path: 'dentist', name: 'Dentist', icon: '🦷' },
+                { path: 'real-estate', name: 'Real Estate', icon: '🏡' },
+                { path: 'plumber', name: 'Plumber', icon: '🔧' },
+                { path: 'hvac', name: 'HVAC', icon: '❄️' },
+                { path: 'personal-trainer', name: 'Trainer', icon: '💪' },
+                { path: 'restaurant', name: 'Restaurant', icon: '🍽️' },
+                { path: 'wedding-photographer', name: 'Photo', icon: '📸' },
+                { path: 'auto-repair', name: 'Auto', icon: '🚗' },
+                { path: 'chiropractor', name: 'Chiro', icon: '🦴' },
+                { path: 'financial-advisor', name: 'Finance', icon: '💰' }
+            ];
+
+            const currentPath = window.location.pathname.replace(/\//g, '');
+
+            const industriesHTML = industries.map(ind => {
+                const isActive = currentPath === ind.path ? ' active' : '';
+                return `<a href="/${ind.path}/"${isActive ? ' class="active"' : ''}><span class="industry-icon">${ind.icon}</span>${ind.name}</a>`;
+            }).join('');
+
+            slideMenu.innerHTML = `
+                <div class="mobile-menu-content">
+                    <nav class="mobile-nav-links">
+                        <a href="/">Home</a>
+                        <a href="#solution">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                    <div class="mobile-menu-cta">
+                        <a href="${ctaHref}">${ctaText}</a>
+                    </div>
+                    <div class="mobile-industries-section">
+                        <div class="mobile-industries-title">Service Industries</div>
+                        <div class="mobile-industries-grid">
+                            ${industriesHTML}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Append elements
+            container.appendChild(toggle);
+            document.body.appendChild(overlay);
+            document.body.appendChild(slideMenu);
+
+            let scrollPos = 0;
+
+            function openMenu() {
+                scrollPos = window.scrollY;
+                toggle.classList.add('active');
+                toggle.setAttribute('aria-label', 'Close menu');
+                overlay.classList.add('active');
+                slideMenu.classList.add('active');
+                document.body.classList.add('menu-open');
+                document.body.style.top = `-${scrollPos}px`;
+            }
+
+            function closeMenu() {
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-label', 'Open menu');
+                overlay.classList.remove('active');
+                slideMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollPos);
+            }
+
+            toggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (slideMenu.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            slideMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    closeMenu();
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        setTimeout(() => {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                target.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }, 350);
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && slideMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        }
+    })();
+    </script>
+
 </body>
 </html>
