@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Dental | Premium Family & Cosmetic Dentistry</title>
-    <meta name="description" content="Experience world-class dental care at First Dental. Modern technology, gentle approach, stunning results. Now accepting new patients.">
+    <title>First Dental | Where Care Begins | Baltimore, MD</title>
+    <meta name="description" content="First Dental in Baltimore, MD - personalized, compassionate dental care focusing on preventive measures. Cleanings, fillings, implants, braces, crowns, root canals & emergency care.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a6b5a;
-            --primary-light: #2d9f84;
-            --primary-dark: #0f4d3f;
+            --primary: #3075b8;
+            --primary-light: #4a9ae0;
+            --primary-dark: #2E6FAF;
+            --accent: #1b6cb5;
             --gold: #c9a84c;
             --gold-light: #dfc06e;
-            --cream: #faf8f4;
-            --cream-dark: #f0ece4;
+            --cream: #f5f8fc;
+            --cream-dark: #e8eef6;
             --white: #ffffff;
-            --dark: #1a1a2e;
+            --dark: #1b1b1b;
             --gray: #6b7280;
             --gray-light: #9ca3af;
             --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -43,11 +44,7 @@
         }
         nav.scrolled { padding: 0.75rem 5%; border-bottom: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 30px rgba(0,0,0,0.04); }
         .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-        .nav-logo-icon {
-            width: 44px; height: 44px; border-radius: 12px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: white;
-        }
+        .nav-logo-img { height: 48px; width: auto; border-radius: 8px; }
         .nav-logo-text { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--dark); }
         .nav-logo-text span { color: var(--primary); }
         .nav-menu { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
@@ -58,7 +55,7 @@
             font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; transition: all 0.3s;
             text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
         }
-        .nav-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(26,107,90,0.3); }
+        .nav-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(48,117,184,0.3); }
         .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
         /* Hero */
@@ -68,7 +65,7 @@
         }
         .hero-bg-pattern {
             position: absolute; top: 0; right: 0; width: 55%; height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #3db896 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #5db5f5 100%);
             clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
         }
         .hero-bg-pattern::after {
@@ -78,8 +75,8 @@
         .hero-content { position: relative; z-index: 2; max-width: 580px; }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 0.5rem;
-            background: linear-gradient(135deg, rgba(26,107,90,0.08), rgba(201,168,76,0.08));
-            border: 1px solid rgba(26,107,90,0.12); padding: 0.5rem 1.25rem; border-radius: 50px;
+            background: linear-gradient(135deg, rgba(48,117,184,0.08), rgba(201,168,76,0.08));
+            border: 1px solid rgba(48,117,184,0.12); padding: 0.5rem 1.25rem; border-radius: 50px;
             font-size: 0.82rem; font-weight: 600; color: var(--primary); margin-bottom: 2rem;
             letter-spacing: 0.05em; text-transform: uppercase;
         }
@@ -90,7 +87,7 @@
         .hero h1 em { font-style: normal; color: var(--primary); position: relative; }
         .hero h1 em::after {
             content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 8px;
-            background: rgba(201,168,76,0.3); border-radius: 4px; z-index: -1;
+            background: rgba(48,117,184,0.2); border-radius: 4px; z-index: -1;
         }
         .hero p { font-size: 1.1rem; line-height: 1.8; color: var(--gray); margin-bottom: 2.5rem; max-width: 480px; }
         .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
@@ -98,9 +95,9 @@
             background: var(--primary); color: white; padding: 1.1rem 2.25rem; border-radius: 50px;
             font-weight: 600; font-size: 1rem; border: none; cursor: pointer; transition: all 0.35s;
             text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem;
-            box-shadow: 0 4px 20px rgba(26,107,90,0.25);
+            box-shadow: 0 4px 20px rgba(48,117,184,0.25);
         }
-        .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(26,107,90,0.35); }
+        .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(48,117,184,0.35); }
         .btn-hero-outline {
             background: transparent; color: var(--dark); padding: 1.1rem 2.25rem; border-radius: 50px;
             font-weight: 600; font-size: 1rem; border: 2px solid rgba(0,0,0,0.12); cursor: pointer;
@@ -116,8 +113,8 @@
             display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 520px;
         }
         .hero-img { border-radius: 20px; background-size: cover; background-position: center; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .hero-img-1 { height: 300px; grid-row: 1 / 3; background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=85&auto=format&fit=crop'); animation: float 6s ease-in-out infinite; }
-        .hero-img-2 { height: 180px; background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&q=85&auto=format&fit=crop'); animation: float 6s ease-in-out 1s infinite; }
+        .hero-img-1 { height: 300px; grid-row: 1 / 3; background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0STXPDhfodrJXjhZUZCBixyMfzwmZxfcLOvBsjb_8tOFyiPFIt3Iy4SBn1fhCmAPArhrZq1dgRD6kEpidyNOstd3vNJBt54T8aMawZbcPKfLgeKSg-TsS0_Pri30cwdLSqKg0JJvrXiyRPjrKBpmRuPaK2LM4korHNpIcjHQgDF6-Hnd36MxsHNRJYd61ZDnA3sl7UneEZKaMldyvdl1Dw23rafdOcHdMstx=w1280'); animation: float 6s ease-in-out infinite; }
+        .hero-img-2 { height: 180px; background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0STmAeMWigOT4eulUt2_DIwBi_0RVUAE1AqLgUz01D3oU3BwQsn_JjdofgO_g7bATB1aMQr8kRZaDhXzJhI1sapQ6IjTZC3OUvOM7tYZFno8izGpcNqGuKxxbgTkJAMwqUhry0RGiz8NrkYNgDJ0YbwD_XHB3Lw_TwLmflifI9FJMDLUtVbvtk2jbdxDWrLw9Ti1ovatFsUQlGa1uZ9TljtlhTESOyuTnMr14Dk=w1280'); animation: float 6s ease-in-out 1s infinite; }
         .hero-img-3 {
             height: 100px; border-radius: 16px; background: white; padding: 1rem 1.25rem;
             display: flex; align-items: center; gap: 0.75rem;
@@ -166,19 +163,19 @@
         .service-card h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; font-weight: 600; }
         .service-card p { color: var(--gray); line-height: 1.7; font-size: 0.95rem; }
 
-        /* Why Us */
+        /* Why Us / Philosophy */
         .why-us { padding: 7rem 5%; background: var(--cream); }
         .why-us-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
         .why-us-images { position: relative; }
         .why-img-main {
             width: 85%; height: 450px; border-radius: 24px; background-size: cover; background-position: center;
-            background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=85&auto=format&fit=crop');
+            background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0SRm5aDf7tjTtRaTWhV1bzzsAyK3VbN4mBj4A265C5BeF5WzE-a0mh5ZHXLP-dsCtf06lp2_GLDkjIbhC1kHlapu0uSKTRQwPHTSm8pYw-tjck7HkhVDoXZipEVqPCifC7iD1PMtIO4OZfPWo63IQF1SFaXZKKV-ENX7brmW_gQhdQ0t5yAS3r7Rifv5uSDA4WpecLAl6dDu2t15ERSn9uj_a4Xxz_NIRMHhyaU=w1280');
             box-shadow: 0 30px 60px rgba(0,0,0,0.12);
         }
         .why-img-float {
             position: absolute; bottom: -2rem; right: 0; width: 55%; height: 250px;
             border-radius: 20px; background-size: cover; background-position: center;
-            background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=85&auto=format&fit=crop');
+            background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0STmAeMWigOT4eulUt2_DIwBi_0RVUAE1AqLgUz01D3oU3BwQsn_JjdofgO_g7bATB1aMQr8kRZaDhXzJhI1sapQ6IjTZC3OUvOM7tYZFno8izGpcNqGuKxxbgTkJAMwqUhry0RGiz8NrkYNgDJ0YbwD_XHB3Lw_TwLmflifI9FJMDLUtVbvtk2jbdxDWrLw9Ti1ovatFsUQlGa1uZ9TljtlhTESOyuTnMr14Dk=w1280');
             border: 6px solid white; box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
         .why-badge {
@@ -201,7 +198,7 @@
         .why-feature:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.06); transform: translateX(8px); }
         .why-feature-icon {
             width: 48px; height: 48px; min-width: 48px; border-radius: 12px;
-            background: linear-gradient(135deg, rgba(26,107,90,0.1), rgba(26,107,90,0.05));
+            background: linear-gradient(135deg, rgba(48,117,184,0.1), rgba(48,117,184,0.05));
             display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
         }
         .why-feature h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
@@ -215,7 +212,7 @@
             width: 100%; aspect-ratio: 3/4; border-radius: 24px; background-size: cover;
             background-position: center top; margin-bottom: 1.5rem; position: relative; overflow: hidden; transition: all 0.4s;
         }
-        .team-photo::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(to top, rgba(26,26,46,0.6), transparent); opacity: 0; transition: opacity 0.4s; }
+        .team-photo::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(to top, rgba(27,27,27,0.6), transparent); opacity: 0; transition: opacity 0.4s; }
         .team-card:hover .team-photo { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
         .team-card:hover .team-photo::after { opacity: 1; }
         .team-card h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; margin-bottom: 0.3rem; }
@@ -239,7 +236,7 @@
         .test-stars { color: var(--gold); font-size: 1rem; letter-spacing: 3px; margin-bottom: 1.25rem; }
         .test-card blockquote { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; font-style: italic; }
         .test-author { display: flex; align-items: center; gap: 1rem; }
-        .test-avatar { width: 48px; height: 48px; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid var(--gold); }
+        .test-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; font-weight: 700; }
         .test-name { font-weight: 700; font-size: 0.95rem; }
         .test-role { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 
@@ -250,20 +247,20 @@
             border-radius: 16px; background-size: cover; background-position: center;
             transition: all 0.5s; cursor: pointer; overflow: hidden; position: relative;
         }
-        .gallery-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,107,90,0.4), transparent); opacity: 0; transition: opacity 0.4s; }
+        .gallery-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(48,117,184,0.4), transparent); opacity: 0; transition: opacity 0.4s; }
         .gallery-item:hover { transform: scale(1.02); }
         .gallery-item:hover::after { opacity: 1; }
-        .gallery-item:nth-child(1) { grid-column: 1 / 3; background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=85&auto=format&fit=crop'); }
-        .gallery-item:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=500&q=85&auto=format&fit=crop'); }
-        .gallery-item:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=85&auto=format&fit=crop'); }
-        .gallery-item:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=500&q=85&auto=format&fit=crop'); }
-        .gallery-item:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=85&auto=format&fit=crop'); }
-        .gallery-item:nth-child(6) { grid-column: 3 / 5; background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=85&auto=format&fit=crop'); }
+        .gallery-item:nth-child(1) { grid-column: 1 / 3; background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0STXPDhfodrJXjhZUZCBixyMfzwmZxfcLOvBsjb_8tOFyiPFIt3Iy4SBn1fhCmAPArhrZq1dgRD6kEpidyNOstd3vNJBt54T8aMawZbcPKfLgeKSg-TsS0_Pri30cwdLSqKg0JJvrXiyRPjrKBpmRuPaK2LM4korHNpIcjHQgDF6-Hnd36MxsHNRJYd61ZDnA3sl7UneEZKaMldyvdl1Dw23rafdOcHdMstx=w1280'); }
+        .gallery-item:nth-child(2) { background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0STmAeMWigOT4eulUt2_DIwBi_0RVUAE1AqLgUz01D3oU3BwQsn_JjdofgO_g7bATB1aMQr8kRZaDhXzJhI1sapQ6IjTZC3OUvOM7tYZFno8izGpcNqGuKxxbgTkJAMwqUhry0RGiz8NrkYNgDJ0YbwD_XHB3Lw_TwLmflifI9FJMDLUtVbvtk2jbdxDWrLw9Ti1ovatFsUQlGa1uZ9TljtlhTESOyuTnMr14Dk=w1280'); }
+        .gallery-item:nth-child(3) { background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0SRm5aDf7tjTtRaTWhV1bzzsAyK3VbN4mBj4A265C5BeF5WzE-a0mh5ZHXLP-dsCtf06lp2_GLDkjIbhC1kHlapu0uSKTRQwPHTSm8pYw-tjck7HkhVDoXZipEVqPCifC7iD1PMtIO4OZfPWo63IQF1SFaXZKKV-ENX7brmW_gQhdQ0t5yAS3r7Rifv5uSDA4WpecLAl6dDu2t15ERSn9uj_a4Xxz_NIRMHhyaU=w1280'); }
+        .gallery-item:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=85&auto=format&fit=crop'); }
+        .gallery-item:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=500&q=85&auto=format&fit=crop'); }
+        .gallery-item:nth-child(6) { grid-column: 3 / 5; background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=85&auto=format&fit=crop'); }
 
         /* CTA */
         .cta-section { padding: 7rem 5%; background: var(--white); display: flex; justify-content: center; }
         .cta-box {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #2d9f84 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #5db5f5 100%);
             border-radius: 32px; padding: 5rem; text-align: center; color: white;
             max-width: 900px; width: 100%; position: relative; overflow: hidden;
         }
@@ -334,7 +331,7 @@
 
     <nav id="navbar">
         <a href="#" class="nav-logo">
-            <div class="nav-logo-icon">&#x1F9B7;</div>
+            <img class="nav-logo-img" src="https://lh3.googleusercontent.com/sitesv/APaQ0SToc70w5IdilTgKNbgAUgvowT-cIdN8t8eEOEmyhoXBDqVLqil_RRdbnErkVXO_2KEE3hdUidAsBDENf9kXQE0YSZodajKXAY-CmNz3tgKGH2ppYuOWpNM4gLal1geTijom0tXfE8Yejjs3W082rGVjTSnpZm2BWb1WdydwTNlZFzYSg-oXvD56=w16383" alt="First Dental Logo">
             <div class="nav-logo-text">First <span>Dental</span></div>
         </a>
         <ul class="nav-menu">
@@ -343,33 +340,34 @@
             <li><a href="#team">Our Team</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#insurance">Insurance</a></li>
         </ul>
-        <a href="#contact" class="nav-btn">Book Appointment &#8594;</a>
+        <a href="tel:4103232875" class="nav-btn">Call (410) 323-2875 &#8594;</a>
         <button class="mobile-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('show')">&#9776;</button>
     </nav>
 
     <section class="hero">
         <div class="hero-bg-pattern"></div>
         <div class="hero-content fade-up">
-            <div class="hero-badge">&#9733; Award-Winning Dental Practice</div>
-            <h1>Beautiful Smiles Start With <em>Expert Care</em></h1>
-            <p>Experience gentle, personalized dental care using the latest technology. From routine checkups to complete smile makeovers, we're here for your whole family.</p>
+            <div class="hero-badge">&#9733; Where Care Begins</div>
+            <h1>Personalized, Compassionate <em>Dental Care</em></h1>
+            <p>At First Dental, we believe in preventive measures and compassionate, personalized care for every patient. Serving Baltimore families with comprehensive dentistry you can trust.</p>
             <div class="hero-ctas">
-                <a href="#contact" class="btn-hero">Schedule Your Visit &#8594;</a>
+                <a href="tel:4103232875" class="btn-hero">Schedule Your Visit &#8594;</a>
                 <a href="#services" class="btn-hero-outline">Explore Services</a>
             </div>
             <div class="hero-trust">
                 <div class="hero-trust-item">
-                    <div class="number">15+</div>
-                    <div class="label">Years of Excellence</div>
+                    <div class="number">7</div>
+                    <div class="label">Core Services</div>
                 </div>
                 <div class="hero-trust-item">
-                    <div class="number">10K+</div>
-                    <div class="label">Happy Patients</div>
+                    <div class="number">&#10003;</div>
+                    <div class="label">Insurance Accepted</div>
                 </div>
                 <div class="hero-trust-item">
-                    <div class="number">4.9</div>
-                    <div class="label">Google Rating</div>
+                    <div class="number">24/7</div>
+                    <div class="label">Emergency Care</div>
                 </div>
             </div>
         </div>
@@ -379,31 +377,32 @@
             <div class="hero-img hero-img-3">
                 <div>
                     <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <div class="rating-text">4.9 out of 5</div>
-                    <div class="rating-sub">Based on 500+ reviews</div>
+                    <div class="rating-text">First Dental MD</div>
+                    <div class="rating-sub">Baltimore, Maryland</div>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="stats-bar">
-        <div class="stat-item"><div class="stat-number">15<span>+</span></div><div class="stat-label">Years Experience</div></div>
-        <div class="stat-item"><div class="stat-number">10,000<span>+</span></div><div class="stat-label">Patients Served</div></div>
-        <div class="stat-item"><div class="stat-number">98<span>%</span></div><div class="stat-label">Patient Satisfaction</div></div>
+        <div class="stat-item"><div class="stat-number">7<span>+</span></div><div class="stat-label">Services Offered</div></div>
+        <div class="stat-item"><div class="stat-number">1000<span>s</span></div><div class="stat-label">Patients Served</div></div>
+        <div class="stat-item"><div class="stat-number">100<span>%</span></div><div class="stat-label">Patient Focused</div></div>
         <div class="stat-item"><div class="stat-number">24<span>/7</span></div><div class="stat-label">Emergency Care</div></div>
     </div>
 
     <section class="services" id="services">
         <div class="section-label">What We Offer</div>
         <h2 class="section-heading">Comprehensive Dental Services</h2>
-        <p class="section-sub">From preventive care to advanced cosmetic procedures, we provide everything your smile needs under one roof.</p>
+        <p class="section-sub">From routine cleanings to advanced restorative work, First Dental provides everything your smile needs under one roof in Baltimore.</p>
         <div class="services-grid">
-            <div class="service-card"><div class="service-icon-wrap">&#128171;</div><h3>General Dentistry</h3><p>Routine checkups, cleanings, fillings, and preventive care to keep your smile healthy for life.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#10024;</div><h3>Cosmetic Dentistry</h3><p>Veneers, bonding, and whitening treatments to give you the confident, radiant smile you deserve.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#129463;</div><h3>Dental Implants</h3><p>Permanent tooth replacement that looks, feels, and functions just like your natural teeth.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#128108;</div><h3>Invisalign</h3><p>Straighten your teeth discreetly with clear aligners. Custom treatment plans, stunning results.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#128118;</div><h3>Pediatric Care</h3><p>Gentle, fun dental care for kids in a warm environment that builds lifelong healthy habits.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#128656;</div><h3>Emergency Services</h3><p>Same-day emergency appointments available. We're here when you need us most.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#128171;</div><h3>Cleanings</h3><p>Professional cleanings and preventive care to maintain healthy teeth and gums for life.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#129463;</div><h3>Fillings</h3><p>Tooth-colored composite fillings that restore your teeth naturally and protect against further decay.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#128656;</div><h3>Emergency Care</h3><p>When dental emergencies happen, First Dental is here for you with prompt, compassionate treatment.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#128298;</div><h3>Implants</h3><p>Permanent tooth replacement that looks, feels, and functions just like your natural teeth.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#128108;</div><h3>Braces</h3><p>Straighten your teeth and correct bite issues with modern orthodontic solutions for all ages.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#128081;</div><h3>Crowns</h3><p>Custom-crafted dental crowns that restore damaged teeth with strength and a natural appearance.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#9881;</div><h3>Root Canals</h3><p>Save infected teeth with gentle, effective root canal therapy. Pain-free treatment you can trust.</p></div>
         </div>
     </section>
 
@@ -412,17 +411,17 @@
             <div class="why-us-images">
                 <div class="why-img-main"></div>
                 <div class="why-img-float"></div>
-                <div class="why-badge"><div class="why-badge-icon">&#127942;</div><div class="why-badge-text"><div class="val">Top Rated</div><div class="lab">Best Dentist 2025</div></div></div>
+                <div class="why-badge"><div class="why-badge-icon">&#128153;</div><div class="why-badge-text"><div class="val">Our Philosophy</div><div class="lab">Where Care Begins</div></div></div>
             </div>
             <div class="why-us-content">
-                <div class="section-label">Why Choose Us</div>
-                <h2>Where Technology Meets <em>Compassion</em></h2>
-                <p>We've invested in the latest dental technology and assembled a team of specialists who genuinely care about your comfort and results.</p>
+                <div class="section-label">Our Philosophy</div>
+                <h2>Personalized, <em>Compassionate</em> Care</h2>
+                <p>At First Dental, our philosophy centers on providing personalized, compassionate dental care. We emphasize preventive measures to help you maintain optimal oral health for a lifetime.</p>
                 <div class="why-features">
-                    <div class="why-feature"><div class="why-feature-icon">&#128300;</div><div><h4>Advanced Technology</h4><p>Digital X-rays, 3D imaging, and laser treatments for precise, comfortable care.</p></div></div>
-                    <div class="why-feature"><div class="why-feature-icon">&#128147;</div><div><h4>Anxiety-Free Experience</h4><p>Sedation options, noise-canceling headphones, and a spa-like atmosphere.</p></div></div>
-                    <div class="why-feature"><div class="why-feature-icon">&#128197;</div><div><h4>Flexible Scheduling</h4><p>Early morning, evening, and weekend appointments. Online booking available 24/7.</p></div></div>
-                    <div class="why-feature"><div class="why-feature-icon">&#128179;</div><div><h4>Transparent Pricing</h4><p>No surprises. We accept most insurance plans and offer flexible payment options.</p></div></div>
+                    <div class="why-feature"><div class="why-feature-icon">&#128156;</div><div><h4>Patient-Centered Approach</h4><p>Every treatment plan is tailored to your unique needs, goals, and comfort level.</p></div></div>
+                    <div class="why-feature"><div class="why-feature-icon">&#128300;</div><div><h4>Preventive Focus</h4><p>We believe prevention is the best medicine. Regular care today prevents bigger issues tomorrow.</p></div></div>
+                    <div class="why-feature"><div class="why-feature-icon">&#128197;</div><div><h4>Convenient Scheduling</h4><p>Flexible appointments to fit your busy life. Call us at (410) 323-2875 to book.</p></div></div>
+                    <div class="why-feature"><div class="why-feature-icon">&#128179;</div><div><h4>Insurance Friendly</h4><p>We work with a wide range of insurance providers to make your care affordable.</p></div></div>
                 </div>
             </div>
         </div>
@@ -430,22 +429,22 @@
 
     <section class="team" id="team">
         <div style="text-align: center; margin-bottom: 4rem;">
-            <div class="section-label" style="padding-left: 0; display: block;"><span style="margin-left: 2.5rem;">Our Doctors</span></div>
+            <div class="section-label" style="padding-left: 0; display: block;"><span style="margin-left: 2.5rem;">Our Team</span></div>
             <h2 class="section-heading">Meet Your Care Team</h2>
-            <p class="section-sub" style="margin-left: auto; margin-right: auto;">Board-certified specialists with decades of combined experience and thousands of transformed smiles.</p>
+            <p class="section-sub" style="margin-left: auto; margin-right: auto;">Dedicated dental professionals committed to your comfort, health, and beautiful smile.</p>
         </div>
         <div class="team-grid">
             <div class="team-card">
                 <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=85&auto=format&fit=crop');"></div>
-                <h3>Dr. Emily Chen</h3><div class="role">Lead Dentist, DDS</div><p>Harvard-trained with 15+ years specializing in cosmetic and restorative dentistry.</p>
+                <h3>General Dentistry</h3><div class="role">Cleanings & Preventive Care</div><p>Our general dentistry team focuses on maintaining your oral health through regular checkups and cleanings.</p>
             </div>
             <div class="team-card">
                 <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=85&auto=format&fit=crop');"></div>
-                <h3>Dr. Michael Torres</h3><div class="role">Implant Specialist</div><p>Over 3,000 successful implant procedures. Board certified in oral surgery.</p>
+                <h3>Restorative Care</h3><div class="role">Implants, Crowns & Root Canals</div><p>Experienced specialists restoring damaged and missing teeth with precision and care.</p>
             </div>
             <div class="team-card">
                 <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=85&auto=format&fit=crop');"></div>
-                <h3>Dr. Sarah Kim</h3><div class="role">Orthodontist</div><p>Invisalign Diamond Provider. Creating beautiful, healthy smiles for all ages.</p>
+                <h3>Orthodontics</h3><div class="role">Braces & Alignment</div><p>Creating beautiful, properly aligned smiles for patients of all ages.</p>
             </div>
         </div>
     </section>
@@ -454,31 +453,31 @@
         <div style="text-align: center; margin-bottom: 4rem;">
             <div class="section-label" style="padding-left: 0; display: block;"><span style="margin-left: 2.5rem;">Testimonials</span></div>
             <h2 class="section-heading">What Our Patients Say</h2>
-            <p class="section-sub" style="margin-left: auto; margin-right: auto;">Real stories from real patients who trust us with their smiles.</p>
+            <p class="section-sub" style="margin-left: auto; margin-right: auto;">Real stories from real patients who trust First Dental with their smiles.</p>
         </div>
         <div class="test-grid">
             <div class="test-card">
                 <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"I was terrified of dentists for 20 years. First Dental completely changed that. The team is incredibly gentle, and the sedation options made it stress-free."</blockquote>
-                <div class="test-author"><div class="test-avatar" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80&auto=format&fit=crop');"></div><div><div class="test-name">Maria K.</div><div class="test-role">Patient for 3 years</div></div></div>
+                <blockquote>"First Dental truly lives up to their philosophy. The care is personal and the team genuinely cares about my dental health. I've never felt more comfortable at a dentist."</blockquote>
+                <div class="test-author"><div class="test-avatar">M</div><div><div class="test-name">Maria K.</div><div class="test-role">Patient for 3 years</div></div></div>
             </div>
             <div class="test-card">
                 <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"Dr. Chen did my veneers and the results are absolutely stunning. People constantly compliment my smile now. Worth every penny!"</blockquote>
-                <div class="test-author"><div class="test-avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80&auto=format&fit=crop');"></div><div><div class="test-name">James T.</div><div class="test-role">Cosmetic Patient</div></div></div>
+                <blockquote>"Had an emergency root canal and they got me in the same day. The procedure was painless and the staff was incredibly supportive. Highly recommend First Dental!"</blockquote>
+                <div class="test-author"><div class="test-avatar">J</div><div><div class="test-name">James T.</div><div class="test-role">Emergency Patient</div></div></div>
             </div>
             <div class="test-card">
                 <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"My kids ask to go to the dentist! The pediatric team makes it so fun. The facility is gorgeous, like a spa. Online booking is a lifesaver."</blockquote>
-                <div class="test-author"><div class="test-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80&auto=format&fit=crop');"></div><div><div class="test-name">Ashley P.</div><div class="test-role">Parent of 2</div></div></div>
+                <blockquote>"My whole family goes to First Dental. The kids love the team, and I appreciate their focus on prevention. They really take the time to explain everything."</blockquote>
+                <div class="test-author"><div class="test-avatar">A</div><div><div class="test-name">Ashley P.</div><div class="test-role">Family Patient</div></div></div>
             </div>
         </div>
     </section>
 
     <section class="gallery" id="gallery">
         <div style="text-align: center; margin-bottom: 4rem;">
-            <div class="section-label" style="padding-left: 0; display: block;"><span style="margin-left: 2.5rem;">Our Space</span></div>
-            <h2 class="section-heading">A Modern, Relaxing Environment</h2>
+            <div class="section-label" style="padding-left: 0; display: block;"><span style="margin-left: 2.5rem;">Our Practice</span></div>
+            <h2 class="section-heading">A Welcoming, Modern Environment</h2>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item"></div><div class="gallery-item"></div><div class="gallery-item"></div>
@@ -489,12 +488,12 @@
     <section class="cta-section" id="contact">
         <div class="cta-box">
             <h2>Ready for Your Best Smile?</h2>
-            <p>New patients receive a complimentary consultation and personalized treatment plan. Schedule your appointment today.</p>
-            <button class="cta-main-btn">Book Free Consultation &#8594;</button>
+            <p>New patients welcome. Experience the personalized, compassionate care that First Dental is known for. Schedule your appointment today.</p>
+            <a href="tel:4103232875" class="cta-main-btn" style="text-decoration:none;">Call (410) 323-2875 &#8594;</a>
             <div class="cta-info">
-                <div class="cta-info-item">&#128222; (555) 123-4567</div>
-                <div class="cta-info-item">&#128205; 123 Main Street, Suite 100</div>
-                <div class="cta-info-item">&#128338; Mon-Sat 8am-6pm</div>
+                <div class="cta-info-item">&#128222; (410) 323-2875</div>
+                <div class="cta-info-item">&#128205; Baltimore, Maryland</div>
+                <div class="cta-info-item" id="insurance">&#128179; Most Insurance Accepted</div>
             </div>
         </div>
     </section>
@@ -503,18 +502,18 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="#" class="nav-logo" style="margin-bottom: 0.5rem;">
-                    <div class="nav-logo-icon">&#x1F9B7;</div>
+                    <img class="nav-logo-img" src="https://lh3.googleusercontent.com/sitesv/APaQ0SToc70w5IdilTgKNbgAUgvowT-cIdN8t8eEOEmyhoXBDqVLqil_RRdbnErkVXO_2KEE3hdUidAsBDENf9kXQE0YSZodajKXAY-CmNz3tgKGH2ppYuOWpNM4gLal1geTijom0tXfE8Yejjs3W082rGVjTSnpZm2BWb1WdydwTNlZFzYSg-oXvD56=w16383" alt="First Dental Logo" style="filter: brightness(10);">
                     <div class="nav-logo-text" style="color: white;">First <span>Dental</span></div>
                 </a>
-                <p>Providing exceptional dental care with a gentle touch. Your comfort and confidence are our priority.</p>
+                <p>Where care begins. Providing personalized, compassionate dental care with a focus on preventive measures in Baltimore, Maryland.</p>
             </div>
-            <div class="footer-col"><h4>Services</h4><a href="#">General Dentistry</a><a href="#">Cosmetic Dentistry</a><a href="#">Dental Implants</a><a href="#">Invisalign</a><a href="#">Emergency Care</a></div>
-            <div class="footer-col"><h4>Practice</h4><a href="#">About Us</a><a href="#">Our Team</a><a href="#">Technology</a><a href="#">Patient Forms</a><a href="#">Insurance</a></div>
-            <div class="footer-col"><h4>Contact</h4><a href="#">(555) 123-4567</a><a href="#">info@firstdental.com</a><a href="#">123 Main Street</a><a href="#">Suite 100</a></div>
+            <div class="footer-col"><h4>Services</h4><a href="#">Cleanings</a><a href="#">Fillings</a><a href="#">Emergency Care</a><a href="#">Implants</a><a href="#">Braces</a><a href="#">Crowns</a><a href="#">Root Canals</a></div>
+            <div class="footer-col"><h4>Practice</h4><a href="#">About Us</a><a href="#">Our Philosophy</a><a href="#">Insurance Info</a><a href="#">FAQs</a><a href="#">Contact</a></div>
+            <div class="footer-col"><h4>Contact</h4><a href="tel:4103232875">(410) 323-2875</a><a href="#">Baltimore, MD</a><a href="#">info@firstdentalmd.com</a></div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 First Dental. All rights reserved.</p>
-            <div class="footer-social"><a href="#">f</a><a href="#">in</a><a href="#">ig</a><a href="#">yt</a></div>
+            <div class="footer-social"><a href="#">f</a><a href="#">in</a><a href="#">ig</a></div>
         </div>
     </footer>
 
