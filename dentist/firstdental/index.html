@@ -65,11 +65,18 @@
         }
         .hero-bg-pattern {
             position: absolute; top: 0; right: 0; width: 55%; height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #5db5f5 100%);
+            background-image: url('https://images.unsplash.com/photo-1569025743873-ea3a9ber725e?w=1400&q=80&auto=format&fit=crop');
+            background-image: url('https://images.unsplash.com/photo-1617155093730-a8bf47be792d?w=1400&q=80&auto=format&fit=crop');
+            background-size: cover; background-position: center;
             clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
         }
-        .hero-bg-pattern::after {
+        .hero-bg-pattern::before {
             content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(48,117,184,0.85) 0%, rgba(74,154,224,0.8) 50%, rgba(93,181,245,0.75) 100%);
+            z-index: 1;
+        }
+        .hero-bg-pattern::after {
+            content: ''; position: absolute; inset: 0; z-index: 2;
             background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3C/g%3E%3C/svg%3E");
         }
         .hero-content { position: relative; z-index: 2; max-width: 580px; }
@@ -162,6 +169,10 @@
         .service-card:hover .service-icon-wrap { transform: scale(1.1) rotate(-5deg); }
         .service-card h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; font-weight: 600; }
         .service-card p { color: var(--gray); line-height: 1.7; font-size: 0.95rem; }
+        .service-img {
+            width: 100%; height: 160px; border-radius: 12px; background-size: cover;
+            background-position: center; margin-bottom: 1.25rem;
+        }
 
         /* Why Us / Philosophy */
         .why-us { padding: 7rem 5%; background: var(--cream); }
@@ -396,13 +407,34 @@
         <h2 class="section-heading">Comprehensive Dental Services</h2>
         <p class="section-sub">From routine cleanings to advanced restorative work, First Dental provides everything your smile needs under one roof in Baltimore.</p>
         <div class="services-grid">
-            <div class="service-card"><div class="service-icon-wrap">&#128171;</div><h3>Cleanings</h3><p>Professional cleanings and preventive care to maintain healthy teeth and gums for life.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#129463;</div><h3>Fillings</h3><p>Tooth-colored composite fillings that restore your teeth naturally and protect against further decay.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#128656;</div><h3>Emergency Care</h3><p>When dental emergencies happen, First Dental is here for you with prompt, compassionate treatment.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#128298;</div><h3>Implants</h3><p>Permanent tooth replacement that looks, feels, and functions just like your natural teeth.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#128108;</div><h3>Braces</h3><p>Straighten your teeth and correct bite issues with modern orthodontic solutions for all ages.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#128081;</div><h3>Crowns</h3><p>Custom-crafted dental crowns that restore damaged teeth with strength and a natural appearance.</p></div>
-            <div class="service-card"><div class="service-icon-wrap">&#9881;</div><h3>Root Canals</h3><p>Save infected teeth with gentle, effective root canal therapy. Pain-free treatment you can trust.</p></div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&q=80&auto=format&fit=crop');"></div>
+                <h3>Cleanings</h3><p>Professional cleanings and preventive care to maintain healthy teeth and gums for life.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80&auto=format&fit=crop');"></div>
+                <h3>Fillings</h3><p>Tooth-colored composite fillings that restore your teeth naturally and protect against further decay.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&q=80&auto=format&fit=crop');"></div>
+                <h3>Emergency Care</h3><p>When dental emergencies happen, First Dental is here for you with prompt, compassionate treatment.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=500&q=80&auto=format&fit=crop');"></div>
+                <h3>Implants</h3><p>Permanent tooth replacement that looks, feels, and functions just like your natural teeth.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=80&auto=format&fit=crop');"></div>
+                <h3>Braces</h3><p>Straighten your teeth and correct bite issues with modern orthodontic solutions for all ages.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80&auto=format&fit=crop');"></div>
+                <h3>Crowns</h3><p>Custom-crafted dental crowns that restore damaged teeth with strength and a natural appearance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80&auto=format&fit=crop');"></div>
+                <h3>Root Canals</h3><p>Save infected teeth with gentle, effective root canal therapy. Pain-free treatment you can trust.</p>
+            </div>
         </div>
     </section>
 
@@ -435,16 +467,16 @@
         </div>
         <div class="team-grid">
             <div class="team-card">
-                <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=85&auto=format&fit=crop');"></div>
-                <h3>General Dentistry</h3><div class="role">Cleanings & Preventive Care</div><p>Our general dentistry team focuses on maintaining your oral health through regular checkups and cleanings.</p>
+                <div class="team-photo" style="background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0SQwYH-H0kUKOzQ-Ic14Ygie5dqfs5TZpUfOwOOaCMi0O4hM86ixnPJ4LEhzi393aZciPYKHdflQKq-r_QvMxBRvQMbAwD4nOS00mAUZ3hBZdyvaODWbJalyApFYC_X-np_T35cqI4H8_sy22IZBQjFZApbgZY1GvFz64VrF_xcTij_Gccj7QdNFReCTKbROYcyfz0oWpWPAIb1J3waznZALu6W2C6KT91lTh8Q=w1280');"></div>
+                <h3>Dr. Kevin Son</h3><div class="role">DDS</div><p>Johns Hopkins University (BS), University of Maryland School of Dentistry (DDS), Kings County Hospital (GPR)</p>
             </div>
             <div class="team-card">
-                <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=85&auto=format&fit=crop');"></div>
-                <h3>Restorative Care</h3><div class="role">Implants, Crowns & Root Canals</div><p>Experienced specialists restoring damaged and missing teeth with precision and care.</p>
+                <div class="team-photo" style="background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0SR2vnMieKs_k1qP-lryor0b3INO1_RSXIseIKobR41cFC6At-A5qI8q9hqzIu_Ud9xZxS7ywcrPHclE4GdSj9elsfo2lL2n8cb1mzC94UC1e-PPiae6Bg4BQgAqO1Mj36wTGIMTJmXN9TJRYExD_H3Bx76FGNEoPFEg-NwZAQF_m1WKR_RZjGzhy7p2fT0meu7InhuY6i_l3P3ayBV3abImK4wyDExBHBvy=w1280');"></div>
+                <h3>Dr. Suji Cha</h3><div class="role">DDS</div><p>Washington University in St. Louis (BA), University of Maryland School of Dentistry (DDS), Montefiore Medical Center (GPR)</p>
             </div>
             <div class="team-card">
-                <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=85&auto=format&fit=crop');"></div>
-                <h3>Orthodontics</h3><div class="role">Braces & Alignment</div><p>Creating beautiful, properly aligned smiles for patients of all ages.</p>
+                <div class="team-photo" style="background-image: url('https://lh3.googleusercontent.com/sitesv/APaQ0SRjWT1ieTeisndOkofjLfNcQqwvycEaApe4LZXXH9oMa4NHN2xM8wA5aIsdHHtS1hteQrtdatwJGvyOgNVNdgE1TdnXOr0OWgJNLnTrr2mtM7YQKhc0N0rFjz7X_knxftlKoyUmYjfhVuWCzavifrKqt0R32QrOEtRDTcHn-rV4th6oWfQdX2DM_uXedBLa4jcVS85nLiJV3HrNmPXIyPBbIuS-CBqaxxKZwBo=w1280');"></div>
+                <h3>Dr. Eileen Shannon</h3><div class="role">DDS</div><p>New York University (BS), New York College of Dentistry (DDS), University of Nebraska Medical Center (AEGD)</p>
             </div>
         </div>
     </section>
@@ -492,7 +524,7 @@
             <a href="tel:4103232875" class="cta-main-btn" style="text-decoration:none;">Call (410) 323-2875 &#8594;</a>
             <div class="cta-info">
                 <div class="cta-info-item">&#128222; (410) 323-2875</div>
-                <div class="cta-info-item">&#128205; Baltimore, Maryland</div>
+                <div class="cta-info-item">&#128205; 5710 Bellona Ave, Suite 101, Baltimore, MD 21212</div>
                 <div class="cta-info-item" id="insurance">&#128179; Most Insurance Accepted</div>
             </div>
         </div>
@@ -509,7 +541,7 @@
             </div>
             <div class="footer-col"><h4>Services</h4><a href="#">Cleanings</a><a href="#">Fillings</a><a href="#">Emergency Care</a><a href="#">Implants</a><a href="#">Braces</a><a href="#">Crowns</a><a href="#">Root Canals</a></div>
             <div class="footer-col"><h4>Practice</h4><a href="#">About Us</a><a href="#">Our Philosophy</a><a href="#">Insurance Info</a><a href="#">FAQs</a><a href="#">Contact</a></div>
-            <div class="footer-col"><h4>Contact</h4><a href="tel:4103232875">(410) 323-2875</a><a href="#">Baltimore, MD</a><a href="#">info@firstdentalmd.com</a></div>
+            <div class="footer-col"><h4>Contact</h4><a href="tel:4103232875">(410) 323-2875</a><a href="#">5710 Bellona Ave, Suite 101</a><a href="#">Baltimore, MD 21212</a><a href="mailto:FirstDentalMD@gmail.com">FirstDentalMD@gmail.com</a></div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 First Dental. All rights reserved.</p>
