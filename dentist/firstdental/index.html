@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1397025095456457');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1397025095456457&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Smile Dental | Modern Family Dentistry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky: #0ea5e9;
+            --sky-light: #38bdf8;
+            --sky-dark: #0284c7;
+            --mint: #14b8a6;
+            --mint-light: #5eead4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #475569;
+            --gray-900: #0f172a;
+            --font-display: 'Quicksand', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--gray-900); overflow-x: hidden; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(14, 165, 233, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--sky), var(--mint));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--sky); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--sky) 0%, var(--sky-light) 100%);
+            color: var(--white);
+            padding: 0.875rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+
+        .hero {
+            padding: 8rem 4rem 5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 100vh;
+            background: var(--gray-50);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 70%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            animation: fadeUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sky-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge img {
+            width: 18px;
+            height: 18px;
+            filter: brightness(0) saturate(100%) invert(39%) sepia(79%) saturate(2127%) hue-rotate(176deg) brightness(96%) contrast(95%);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--gray-600);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--sky) 0%, var(--sky-light) 100%);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gray-900);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid var(--gray-100);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--sky);
+            color: var(--sky);
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-img {
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        }
+
+        .hero-img:nth-child(1) {
+            height: 280px;
+            background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&q=80&auto=format&fit=crop');
+        }
+
+        .hero-img:nth-child(2) {
+            height: 280px;
+            background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80&auto=format&fit=crop');
+            transform: translateY(2rem);
+        }
+
+        .hero-img:nth-child(3) {
+            grid-column: 1 / -1;
+            height: 200px;
+            background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop');
+        }
+
+        .about {
+            padding: 6rem 4rem;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about-content h2 span {
+            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content p {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+        }
+
+        .about-feature img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) saturate(100%) invert(39%) sepia(79%) saturate(2127%) hue-rotate(176deg) brightness(96%) contrast(95%);
+        }
+
+        .about-feature span {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .about-img {
+            border-radius: 16px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-img:nth-child(1) {
+            height: 250px;
+            background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80&auto=format&fit=crop');
+        }
+
+        .about-img:nth-child(2) {
+            height: 250px;
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=80&auto=format&fit=crop');
+            transform: translateY(1.5rem);
+        }
+
+        .about-img-full {
+            grid-column: 1 / -1;
+            height: 180px;
+            background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+        }
+
+        .services {
+            padding: 6rem 4rem;
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+            color: var(--sky-dark);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            border-color: var(--sky-light);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        }
+
+        .service-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-1-img { background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=500&q=80&auto=format&fit=crop'); }
+        .service-2-img { background-image: url('https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=500&q=80&auto=format&fit=crop'); }
+        .service-3-img { background-image: url('https://images.unsplash.com/photo-1516307365426-bea591f05011?w=500&q=80&auto=format&fit=crop'); }
+        .service-4-img { background-image: url('https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=500&q=80&auto=format&fit=crop'); }
+        .service-5-img { background-image: url('https://images.unsplash.com/photo-1579083745289-ca5e3ef4ffd3?w=500&q=80&auto=format&fit=crop'); }
+        .service-6-img { background-image: url('https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=500&q=80&auto=format&fit=crop'); }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            margin-top: -50px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .service-icon img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .team {
+            padding: 6rem 4rem;
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background-size: cover;
+            background-position: center;
+            border: 4px solid var(--sky-light);
+        }
+
+        .team-1-img { background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&auto=format&fit=crop'); }
+        .team-2-img { background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80&auto=format&fit=crop'); }
+        .team-3-img { background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80&auto=format&fit=crop'); }
+
+        .team-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .team-card .role {
+            color: var(--sky);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .testimonials {
+            padding: 6rem 4rem;
+            background: var(--gray-50);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.1);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) saturate(100%) invert(77%) sepia(68%) saturate(467%) hue-rotate(358deg) brightness(101%) contrast(97%);
+        }
+
+        .testimonial-card p {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .author-1-img { background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80&auto=format&fit=crop'); }
+        .author-2-img { background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80&auto=format&fit=crop'); }
+        .author-3-img { background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80&auto=format&fit=crop'); }
+
+        .author-info h4 { font-weight: 600; margin-bottom: 0.2rem; }
+        .author-info span { color: var(--gray-600); font-size: 0.85rem; }
+
+        .gallery {
+            padding: 6rem 4rem;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-img {
+            height: 250px;
+            border-radius: 16px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.4s;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-img:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=400&q=80&auto=format&fit=crop'); }
+        .gallery-img:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=400&q=80&auto=format&fit=crop'); }
+        .gallery-img:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1445527815219-ecbfec67492e?w=400&q=80&auto=format&fit=crop'); }
+        .gallery-img:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&q=80&auto=format&fit=crop'); }
+
+        .cta {
+            padding: 6rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-image {
+            height: 350px;
+            border-radius: 20px;
+            background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            margin-bottom: 2.5rem;
+            max-width: 450px;
+        }
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--sky-dark);
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) saturate(100%) invert(39%) sepia(79%) saturate(2127%) hue-rotate(176deg) brightness(96%) contrast(95%);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        footer {
+            padding: 3rem 4rem;
+            background: var(--gray-900);
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .logo-icon {
+            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+        }
+
+        footer .logo-text {
+            -webkit-text-fill-color: var(--white);
+            background: none;
+        }
+
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: var(--gray-600); text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--sky-light); }
+
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; padding: 6rem 2rem 4rem; }
+            .hero-content { text-align: center; }
+            .hero-content p { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-images { max-width: 500px; margin: 0 auto; }
+            .about-grid { grid-template-columns: 1fr; }
+            .services-grid, .team-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta { grid-template-columns: 1fr; text-align: center; }
+            .cta-image { display: none; }
+            .cta-content p { margin-left: auto; margin-right: auto; }
+            nav { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero-img:nth-child(2) { transform: none; }
+            .about-images { grid-template-columns: 1fr; }
+            .about-img:nth-child(2) { transform: none; }
+            .about-features { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="https://api.iconify.design/lucide:smile.svg" alt="">
+            </div>
+            <div class="logo-text">Bright Smile</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+        <button class="nav-cta">Book Appointment</button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <img src="https://api.iconify.design/lucide:award.svg" alt="">
+                Voted #1 Family Dentist 2024
+            </div>
+            <h1>Your Smile Deserves <span>The Best Care</span></h1>
+            <p>Modern, gentle dentistry for the whole family. We combine advanced technology with compassionate care to make every visit comfortable and stress-free.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    Schedule Visit
+                    <img src="https://api.iconify.design/lucide:arrow-right.svg" alt="" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
+                </a>
+                <a href="#gallery" class="btn-secondary">Virtual Tour</a>
+            </div>
+        </div>
+        <div class="hero-images">
+            <div class="hero-img"></div>
+            <div class="hero-img"></div>
+            <div class="hero-img"></div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2>Modern Care, <span>Timeless Smiles</span></h2>
+                <p>For over 15 years, Bright Smile Dental has been the trusted choice for families throughout the community. We believe everyone deserves a healthy, beautiful smile.</p>
+                <p>Our state-of-the-art facility combines the latest dental technology with a warm, welcoming environment. From routine cleanings to complex procedures, we provide personalized care tailored to your unique needs.</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <img src="https://api.iconify.design/lucide:clock.svg" alt="">
+                        <span>Same-Day Appointments</span>
+                    </div>
+                    <div class="about-feature">
+                        <img src="https://api.iconify.design/lucide:heart.svg" alt="">
+                        <span>Gentle & Caring</span>
+                    </div>
+                    <div class="about-feature">
+                        <img src="https://api.iconify.design/lucide:shield-check.svg" alt="">
+                        <span>Insurance Accepted</span>
+                    </div>
+                    <div class="about-feature">
+                        <img src="https://api.iconify.design/lucide:zap.svg" alt="">
+                        <span>Latest Technology</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-images">
+                <div class="about-img"></div>
+                <div class="about-img"></div>
+                <div class="about-img-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-tag">Our Services</span>
+            <h2 class="section-title">Comprehensive Dental Care</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image service-1-img"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <img src="https://api.iconify.design/lucide:sparkles.svg" alt="">
+                    </div>
+                    <h3>Teeth Whitening</h3>
+                    <p>Professional whitening treatments that brighten your smile safely and effectively in just one visit.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image service-2-img"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <img src="https://api.iconify.design/lucide:wrench.svg" alt="">
+                    </div>
+                    <h3>Restorative Care</h3>
+                    <p>Fillings, crowns, and bridges using the latest materials and techniques for lasting results.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image service-3-img"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <img src="https://api.iconify.design/lucide:baby.svg" alt="">
+                    </div>
+                    <h3>Pediatric Dentistry</h3>
+                    <p>Gentle, fun dental care for kids that builds healthy habits and positive associations.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image service-4-img"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <img src="https://api.iconify.design/lucide:align-center.svg" alt="">
+                    </div>
+                    <h3>Invisalign</h3>
+                    <p>Straighten your teeth discreetly with clear aligners. Custom treatment plans for perfect results.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image service-5-img"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <img src="https://api.iconify.design/lucide:circle-dot.svg" alt="">
+                    </div>
+                    <h3>Dental Implants</h3>
+                    <p>Permanent tooth replacement that looks, feels, and functions like your natural teeth.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image service-6-img"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <img src="https://api.iconify.design/lucide:shield.svg" alt="">
+                    </div>
+                    <h3>Preventive Care</h3>
+                    <p>Regular cleanings, exams, and screenings to keep your smile healthy for life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <div class="section-header">
+            <span class="section-tag">Meet Our Team</span>
+            <h2 class="section-title">Experienced & Caring Professionals</h2>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-img team-1-img"></div>
+                <h3>Dr. Emily Chen</h3>
+                <p class="role">Lead Dentist, DDS</p>
+                <p>15+ years of experience specializing in cosmetic and restorative dentistry. Harvard Dental School graduate.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img team-2-img"></div>
+                <h3>Dr. Michael Rodriguez</h3>
+                <p class="role">Pediatric Specialist</p>
+                <p>Dedicated to making dental visits fun for children. Board certified in pediatric dentistry.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img team-3-img"></div>
+                <h3>Dr. Sarah Thompson</h3>
+                <p class="role">Orthodontist</p>
+                <p>Invisalign Diamond Provider with expertise in creating beautiful, healthy smiles for all ages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="reviews">
+        <div class="section-header">
+            <span class="section-tag">Patient Stories</span>
+            <h2 class="section-title">What Our Patients Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                </div>
+                <p>"I used to dread going to the dentist, but Bright Smile changed everything. The team is so gentle and caring. Now I actually look forward to my visits!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar author-1-img"></div>
+                    <div class="author-info">
+                        <h4>Maria K.</h4>
+                        <span>Patient for 3 years</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                </div>
+                <p>"Dr. Chen is amazing with my kids. She makes dental visits fun and educational. My children actually ask when their next appointment is!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar author-2-img"></div>
+                    <div class="author-info">
+                        <h4>James T.</h4>
+                        <span>Parent of 2</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
+                </div>
+                <p>"The Invisalign treatment was life-changing. The whole process was smooth, and the results exceeded my expectations. Best decision ever!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar author-3-img"></div>
+                    <div class="author-info">
+                        <h4>Ashley L.</h4>
+                        <span>Invisalign Patient</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <span class="section-tag">Our Facility</span>
+            <h2 class="section-title">Modern & Comfortable Environment</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-img"></div>
+            <div class="gallery-img"></div>
+            <div class="gallery-img"></div>
+            <div class="gallery-img"></div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="cta-image"></div>
+        <div class="cta-content">
+            <h2>Ready for Your Best Smile?</h2>
+            <p>New patients receive a complimentary consultation and treatment plan. Book your appointment today and experience the Bright Smile difference!</p>
+            <button class="cta-btn">
+                Book Free Consultation
+                <img src="https://api.iconify.design/lucide:calendar.svg" alt="">
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="https://api.iconify.design/lucide:smile.svg" alt="">
+            </div>
+            <div class="logo-text">Bright Smile</div>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Careers</a>
+        </div>
+        <div style="color: var(--gray-600); font-size: 0.85rem;">© 2024 Bright Smile Dental</div>
+    </footer>
+</body>
+</html>
