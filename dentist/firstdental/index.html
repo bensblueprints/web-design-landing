@@ -1,1015 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1397025095456457');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1397025095456457&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Smile Dental | Modern Family Dentistry</title>
+    <title>First Dental | Premium Family & Cosmetic Dentistry</title>
+    <meta name="description" content="Experience world-class dental care at First Dental. Modern technology, gentle approach, stunning results. Now accepting new patients.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --sky: #0ea5e9;
-            --sky-light: #38bdf8;
-            --sky-dark: #0284c7;
-            --mint: #14b8a6;
-            --mint-light: #5eead4;
+            --primary: #1a6b5a;
+            --primary-light: #2d9f84;
+            --primary-dark: #0f4d3f;
+            --gold: #c9a84c;
+            --gold-light: #dfc06e;
+            --cream: #faf8f4;
+            --cream-dark: #f0ece4;
             --white: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-600: #475569;
-            --gray-900: #0f172a;
-            --font-display: 'Quicksand', sans-serif;
-            --font-body: 'DM Sans', sans-serif;
+            --dark: #1a1a2e;
+            --gray: #6b7280;
+            --gray-light: #9ca3af;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-display: 'Playfair Display', serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); background: var(--white); color: var(--gray-900); overflow-x: hidden; }
+        body { font-family: var(--font-body); color: var(--dark); overflow-x: hidden; background: var(--white); }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        .fade-up { animation: fadeUp 0.8s ease-out both; }
+        .fade-up-delay { animation: fadeUp 0.8s ease-out 0.2s both; }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* Nav */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(14, 165, 233, 0.1);
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 1.25rem 5%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(20px) saturate(180%);
+            transition: all 0.4s; border-bottom: 1px solid transparent;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+        nav.scrolled { padding: 0.75rem 5%; border-bottom: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 30px rgba(0,0,0,0.04); }
+        .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .nav-logo-icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: white;
         }
-
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .nav-logo-text { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--dark); }
+        .nav-logo-text span { color: var(--primary); }
+        .nav-menu { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+        .nav-menu a { color: var(--gray); text-decoration: none; font-weight: 500; font-size: 0.92rem; transition: color 0.3s; letter-spacing: 0.02em; }
+        .nav-menu a:hover { color: var(--primary); }
+        .nav-btn {
+            background: var(--primary); color: white; padding: 0.8rem 1.75rem; border-radius: 50px;
+            font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; transition: all 0.3s;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
         }
+        .nav-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(26,107,90,0.3); }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
-        .logo-icon img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1);
-        }
-
-        .logo-text {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--gray-600);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--sky), var(--mint));
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a:hover { color: var(--sky); }
-
-        .nav-cta {
-            background: linear-gradient(135deg, var(--sky) 0%, var(--sky-light) 100%);
-            color: var(--white);
-            padding: 0.875rem 1.75rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
-        }
-
+        /* Hero */
         .hero {
-            padding: 8rem 4rem 5rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            min-height: 100vh;
-            background: var(--gray-50);
-            position: relative;
-            overflow: hidden;
+            min-height: 100vh; display: flex; align-items: center; position: relative;
+            background: var(--cream); overflow: hidden; padding: 7rem 5% 5rem;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 70%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
-            pointer-events: none;
+        .hero-bg-pattern {
+            position: absolute; top: 0; right: 0; width: 55%; height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #3db896 100%);
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
         }
-
-        .hero-content {
-            animation: fadeUp 1s ease-out;
+        .hero-bg-pattern::after {
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3C/g%3E%3C/svg%3E");
         }
-
+        .hero-content { position: relative; z-index: 2; max-width: 580px; }
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--sky-dark);
-            margin-bottom: 1.5rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(26,107,90,0.08), rgba(201,168,76,0.08));
+            border: 1px solid rgba(26,107,90,0.12); padding: 0.5rem 1.25rem; border-radius: 50px;
+            font-size: 0.82rem; font-weight: 600; color: var(--primary); margin-bottom: 2rem;
+            letter-spacing: 0.05em; text-transform: uppercase;
         }
-
-        .hero-badge img {
-            width: 18px;
-            height: 18px;
-            filter: brightness(0) saturate(100%) invert(39%) sepia(79%) saturate(2127%) hue-rotate(176deg) brightness(96%) contrast(95%);
+        .hero h1 {
+            font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.2rem);
+            line-height: 1.15; margin-bottom: 1.5rem; font-weight: 700; color: var(--dark);
         }
-
-        .hero-content h1 {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
+        .hero h1 em { font-style: normal; color: var(--primary); position: relative; }
+        .hero h1 em::after {
+            content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 8px;
+            background: rgba(201,168,76,0.3); border-radius: 4px; z-index: -1;
         }
-
-        .hero-content h1 span {
-            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero p { font-size: 1.1rem; line-height: 1.8; color: var(--gray); margin-bottom: 2.5rem; max-width: 480px; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+        .btn-hero {
+            background: var(--primary); color: white; padding: 1.1rem 2.25rem; border-radius: 50px;
+            font-weight: 600; font-size: 1rem; border: none; cursor: pointer; transition: all 0.35s;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem;
+            box-shadow: 0 4px 20px rgba(26,107,90,0.25);
         }
-
-        .hero-content p {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--gray-600);
-            margin-bottom: 2.5rem;
-            max-width: 500px;
+        .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(26,107,90,0.35); }
+        .btn-hero-outline {
+            background: transparent; color: var(--dark); padding: 1.1rem 2.25rem; border-radius: 50px;
+            font-weight: 600; font-size: 1rem; border: 2px solid rgba(0,0,0,0.12); cursor: pointer;
+            transition: all 0.35s; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem;
         }
-
-        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--sky) 0%, var(--sky-light) 100%);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
-        }
-
-        .btn-secondary {
-            background: var(--white);
-            color: var(--gray-900);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            border: 2px solid var(--gray-100);
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--sky);
-            color: var(--sky);
-        }
-
+        .btn-hero-outline:hover { border-color: var(--primary); color: var(--primary); }
+        .hero-trust { display: flex; align-items: center; gap: 2rem; }
+        .hero-trust-item { display: flex; align-items: center; gap: 0.5rem; }
+        .hero-trust-item .number { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .hero-trust-item .label { font-size: 0.8rem; color: var(--gray); line-height: 1.3; max-width: 80px; }
         .hero-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            animation: fadeUp 1s ease-out 0.2s both;
+            position: absolute; right: 5%; top: 50%; transform: translateY(-50%); z-index: 3;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 520px;
         }
-
-        .hero-img {
-            border-radius: 20px;
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        .hero-img { border-radius: 20px; background-size: cover; background-position: center; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .hero-img-1 { height: 300px; grid-row: 1 / 3; background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=85&auto=format&fit=crop'); animation: float 6s ease-in-out infinite; }
+        .hero-img-2 { height: 180px; background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&q=85&auto=format&fit=crop'); animation: float 6s ease-in-out 1s infinite; }
+        .hero-img-3 {
+            height: 100px; border-radius: 16px; background: white; padding: 1rem 1.25rem;
+            display: flex; align-items: center; gap: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1); animation: float 6s ease-in-out 2s infinite;
         }
+        .hero-img-3 .rating-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+        .hero-img-3 .rating-text { font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+        .hero-img-3 .rating-sub { font-size: 0.75rem; color: var(--gray); }
 
-        .hero-img:nth-child(1) {
-            height: 280px;
-            background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&q=80&auto=format&fit=crop');
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--dark); padding: 3rem 5%; display: grid;
+            grid-template-columns: repeat(4, 1fr); gap: 2rem; position: relative;
         }
+        .stats-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--gold), var(--primary-light)); }
+        .stat-item { text-align: center; }
+        .stat-number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 0.25rem; }
+        .stat-number span { color: var(--gold); }
+        .stat-label { font-size: 0.85rem; color: var(--gray-light); letter-spacing: 0.08em; text-transform: uppercase; }
 
-        .hero-img:nth-child(2) {
-            height: 280px;
-            background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80&auto=format&fit=crop');
-            transform: translateY(2rem);
+        /* Services */
+        .services { padding: 7rem 5%; background: var(--white); }
+        .section-label {
+            display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--primary);
+            letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem;
+            position: relative; padding-left: 2.5rem;
         }
-
-        .hero-img:nth-child(3) {
-            grid-column: 1 / -1;
-            height: 200px;
-            background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop');
-        }
-
-        .about {
-            padding: 6rem 4rem;
-            background: var(--white);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-content h2 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .about-content h2 span {
-            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .about-content p {
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .about-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--gray-50);
-            border-radius: 12px;
-        }
-
-        .about-feature img {
-            width: 20px;
-            height: 20px;
-            filter: brightness(0) saturate(100%) invert(39%) sepia(79%) saturate(2127%) hue-rotate(176deg) brightness(96%) contrast(95%);
-        }
-
-        .about-feature span {
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .about-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .about-img {
-            border-radius: 16px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .about-img:nth-child(1) {
-            height: 250px;
-            background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80&auto=format&fit=crop');
-        }
-
-        .about-img:nth-child(2) {
-            height: 250px;
-            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=80&auto=format&fit=crop');
-            transform: translateY(1.5rem);
-        }
-
-        .about-img-full {
-            grid-column: 1 / -1;
-            height: 180px;
-            background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            border-radius: 16px;
-        }
-
-        .services {
-            padding: 6rem 4rem;
-            background: var(--gray-50);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
-            color: var(--sky-dark);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
+        .section-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 2rem; height: 2px; background: var(--primary); transform: translateY(-50%); }
+        .section-heading { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+        .section-sub { font-size: 1.05rem; color: var(--gray); max-width: 550px; line-height: 1.7; margin-bottom: 3.5rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .service-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s;
-            border: 2px solid transparent;
+            background: var(--cream); border-radius: 20px; padding: 2.5rem 2rem; position: relative;
+            transition: all 0.4s; overflow: hidden; border: 1px solid transparent; cursor: pointer;
         }
-
-        .service-card:hover {
-            border-color: var(--sky-light);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); opacity: 0; transition: opacity 0.4s; }
+        .service-card:hover { background: white; border-color: rgba(0,0,0,0.06); transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon-wrap {
+            width: 64px; height: 64px; border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;
+            font-size: 1.6rem; color: white; transition: transform 0.4s;
         }
+        .service-card:hover .service-icon-wrap { transform: scale(1.1) rotate(-5deg); }
+        .service-card h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; font-weight: 600; }
+        .service-card p { color: var(--gray); line-height: 1.7; font-size: 0.95rem; }
 
-        .service-image {
-            height: 180px;
-            background-size: cover;
-            background-position: center;
+        /* Why Us */
+        .why-us { padding: 7rem 5%; background: var(--cream); }
+        .why-us-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .why-us-images { position: relative; }
+        .why-img-main {
+            width: 85%; height: 450px; border-radius: 24px; background-size: cover; background-position: center;
+            background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=85&auto=format&fit=crop');
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
         }
-
-        .service-1-img { background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=500&q=80&auto=format&fit=crop'); }
-        .service-2-img { background-image: url('https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=500&q=80&auto=format&fit=crop'); }
-        .service-3-img { background-image: url('https://images.unsplash.com/photo-1516307365426-bea591f05011?w=500&q=80&auto=format&fit=crop'); }
-        .service-4-img { background-image: url('https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=500&q=80&auto=format&fit=crop'); }
-        .service-5-img { background-image: url('https://images.unsplash.com/photo-1579083745289-ca5e3ef4ffd3?w=500&q=80&auto=format&fit=crop'); }
-        .service-6-img { background-image: url('https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=500&q=80&auto=format&fit=crop'); }
-
-        .service-content {
-            padding: 2rem;
+        .why-img-float {
+            position: absolute; bottom: -2rem; right: 0; width: 55%; height: 250px;
+            border-radius: 20px; background-size: cover; background-position: center;
+            background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=85&auto=format&fit=crop');
+            border: 6px solid white; box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            margin-top: -50px;
-            position: relative;
-            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+        .why-badge {
+            position: absolute; top: 2rem; right: 2rem; background: white; border-radius: 16px;
+            padding: 1.25rem 1.5rem; box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            display: flex; align-items: center; gap: 0.75rem; animation: float 5s ease-in-out infinite;
         }
-
-        .service-icon img {
-            width: 28px;
-            height: 28px;
-            filter: brightness(0) invert(1);
+        .why-badge-icon { font-size: 2rem; }
+        .why-badge-text .val { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
+        .why-badge-text .lab { font-size: 0.75rem; color: var(--gray); }
+        .why-us-content h2 { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
+        .why-us-content h2 em { font-style: normal; color: var(--primary); }
+        .why-us-content > p { font-size: 1.05rem; color: var(--gray); line-height: 1.8; margin-bottom: 2.5rem; }
+        .why-features { display: flex; flex-direction: column; gap: 1.25rem; }
+        .why-feature {
+            display: flex; gap: 1.25rem; align-items: flex-start;
+            background: white; padding: 1.5rem; border-radius: 16px;
+            transition: all 0.3s; border: 1px solid rgba(0,0,0,0.04);
         }
-
-        .service-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+        .why-feature:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.06); transform: translateX(8px); }
+        .why-feature-icon {
+            width: 48px; height: 48px; min-width: 48px; border-radius: 12px;
+            background: linear-gradient(135deg, rgba(26,107,90,0.1), rgba(26,107,90,0.05));
+            display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
         }
+        .why-feature h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .why-feature p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
 
-        .service-card p {
-            color: var(--gray-600);
-            line-height: 1.7;
+        /* Team */
+        .team { padding: 7rem 5%; background: var(--white); }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .team-card { text-align: center; }
+        .team-photo {
+            width: 100%; aspect-ratio: 3/4; border-radius: 24px; background-size: cover;
+            background-position: center top; margin-bottom: 1.5rem; position: relative; overflow: hidden; transition: all 0.4s;
         }
+        .team-photo::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(to top, rgba(26,26,46,0.6), transparent); opacity: 0; transition: opacity 0.4s; }
+        .team-card:hover .team-photo { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .team-card:hover .team-photo::after { opacity: 1; }
+        .team-card h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .team-card .role { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .team-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
 
-        .team {
-            padding: 6rem 4rem;
-            background: var(--white);
+        /* Testimonials */
+        .testimonials { padding: 7rem 5%; background: var(--primary-dark); color: white; position: relative; overflow: hidden; }
+        .testimonials::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; border-radius: 50%; background: rgba(255,255,255,0.03); }
+        .testimonials::after { content: ''; position: absolute; bottom: -30%; left: -10%; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.02); }
+        .testimonials .section-label { color: var(--gold); }
+        .testimonials .section-label::before { background: var(--gold); }
+        .testimonials .section-heading { color: white; }
+        .testimonials .section-sub { color: rgba(255,255,255,0.6); }
+        .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; position: relative; z-index: 2; }
+        .test-card {
+            background: rgba(255,255,255,0.07); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; transition: all 0.4s;
         }
+        .test-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-5px); }
+        .test-stars { color: var(--gold); font-size: 1rem; letter-spacing: 3px; margin-bottom: 1.25rem; }
+        .test-card blockquote { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; font-style: italic; }
+        .test-author { display: flex; align-items: center; gap: 1rem; }
+        .test-avatar { width: 48px; height: 48px; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid var(--gold); }
+        .test-name { font-weight: 700; font-size: 0.95rem; }
+        .test-role { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+        /* Gallery */
+        .gallery { padding: 7rem 5%; background: var(--cream); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 250px 200px; gap: 1rem; }
+        .gallery-item {
+            border-radius: 16px; background-size: cover; background-position: center;
+            transition: all 0.5s; cursor: pointer; overflow: hidden; position: relative;
         }
+        .gallery-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,107,90,0.4), transparent); opacity: 0; transition: opacity 0.4s; }
+        .gallery-item:hover { transform: scale(1.02); }
+        .gallery-item:hover::after { opacity: 1; }
+        .gallery-item:nth-child(1) { grid-column: 1 / 3; background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=85&auto=format&fit=crop'); }
+        .gallery-item:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=500&q=85&auto=format&fit=crop'); }
+        .gallery-item:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=85&auto=format&fit=crop'); }
+        .gallery-item:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=500&q=85&auto=format&fit=crop'); }
+        .gallery-item:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=85&auto=format&fit=crop'); }
+        .gallery-item:nth-child(6) { grid-column: 3 / 5; background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=85&auto=format&fit=crop'); }
 
-        .team-card {
-            text-align: center;
+        /* CTA */
+        .cta-section { padding: 7rem 5%; background: var(--white); display: flex; justify-content: center; }
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #2d9f84 100%);
+            border-radius: 32px; padding: 5rem; text-align: center; color: white;
+            max-width: 900px; width: 100%; position: relative; overflow: hidden;
         }
-
-        .team-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            background-size: cover;
-            background-position: center;
-            border: 4px solid var(--sky-light);
+        .cta-box::before {
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
         }
-
-        .team-1-img { background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&auto=format&fit=crop'); }
-        .team-2-img { background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80&auto=format&fit=crop'); }
-        .team-3-img { background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80&auto=format&fit=crop'); }
-
-        .team-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+        .cta-box > * { position: relative; z-index: 1; }
+        .cta-box h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+        .cta-box p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2.5rem; max-width: 550px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+        .cta-main-btn {
+            background: white; color: var(--primary-dark); padding: 1.25rem 3rem; border-radius: 50px;
+            font-weight: 700; font-size: 1.05rem; border: none; cursor: pointer; transition: all 0.35s;
+            display: inline-flex; align-items: center; gap: 0.75rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
+        .cta-main-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .cta-info { display: flex; justify-content: center; gap: 3rem; margin-top: 2.5rem; flex-wrap: wrap; }
+        .cta-info-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; opacity: 0.85; }
 
-        .team-card .role {
-            color: var(--sky);
-            font-weight: 600;
-            margin-bottom: 1rem;
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 5rem 5% 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand p { color: var(--gray-light); line-height: 1.7; margin-top: 1rem; font-size: 0.9rem; max-width: 300px; }
+        .footer-col h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 1.25rem; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.92rem; margin-bottom: 0.75rem; transition: color 0.3s; }
+        .footer-col a:hover { color: var(--primary-light); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { color: var(--gray-light); font-size: 0.82rem; }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a {
+            width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.06);
+            display: flex; align-items: center; justify-content: center; color: white;
+            text-decoration: none; font-size: 1.1rem; transition: all 0.3s;
         }
+        .footer-social a:hover { background: var(--primary); transform: translateY(-3px); }
 
-        .team-card p {
-            color: var(--gray-600);
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-
-        .testimonials {
-            padding: 6rem 4rem;
-            background: var(--gray-50);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.1);
-        }
-
-        .stars {
-            display: flex;
-            gap: 0.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .stars img {
-            width: 20px;
-            height: 20px;
-            filter: brightness(0) saturate(100%) invert(77%) sepia(68%) saturate(467%) hue-rotate(358deg) brightness(101%) contrast(97%);
-        }
-
-        .testimonial-card p {
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .author-1-img { background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80&auto=format&fit=crop'); }
-        .author-2-img { background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80&auto=format&fit=crop'); }
-        .author-3-img { background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80&auto=format&fit=crop'); }
-
-        .author-info h4 { font-weight: 600; margin-bottom: 0.2rem; }
-        .author-info span { color: var(--gray-600); font-size: 0.85rem; }
-
-        .gallery {
-            padding: 6rem 4rem;
-            background: var(--white);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-        }
-
-        .gallery-img {
-            height: 250px;
-            border-radius: 16px;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.4s;
-        }
-
-        .gallery-img:hover {
-            transform: scale(1.03);
-        }
-
-        .gallery-img:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=400&q=80&auto=format&fit=crop'); }
-        .gallery-img:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=400&q=80&auto=format&fit=crop'); }
-        .gallery-img:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1445527815219-ecbfec67492e?w=400&q=80&auto=format&fit=crop'); }
-        .gallery-img:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&q=80&auto=format&fit=crop'); }
-
-        .cta {
-            padding: 6rem 4rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .cta-image {
-            height: 350px;
-            border-radius: 20px;
-            background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-content h2 {
-            font-family: var(--font-display);
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-content p {
-            font-size: 1.15rem;
-            opacity: 0.95;
-            margin-bottom: 2.5rem;
-            max-width: 450px;
-        }
-
-        .cta-btn {
-            background: var(--white);
-            color: var(--sky-dark);
-            padding: 1.25rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-btn img {
-            width: 20px;
-            height: 20px;
-            filter: brightness(0) saturate(100%) invert(39%) sepia(79%) saturate(2127%) hue-rotate(176deg) brightness(96%) contrast(95%);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-        }
-
-        footer {
-            padding: 3rem 4rem;
-            background: var(--gray-900);
-            color: var(--white);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        footer .logo-icon {
-            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
-        }
-
-        footer .logo-text {
-            -webkit-text-fill-color: var(--white);
-            background: none;
-        }
-
-        .footer-links { display: flex; gap: 2rem; }
-        .footer-links a { color: var(--gray-600); text-decoration: none; transition: color 0.3s; }
-        .footer-links a:hover { color: var(--sky-light); }
-
+        /* Responsive */
         @media (max-width: 1024px) {
-            .hero { grid-template-columns: 1fr; padding: 6rem 2rem 4rem; }
-            .hero-content { text-align: center; }
-            .hero-content p { margin-left: auto; margin-right: auto; }
-            .hero-buttons { justify-content: center; }
-            .hero-images { max-width: 500px; margin: 0 auto; }
-            .about-grid { grid-template-columns: 1fr; }
-            .services-grid, .team-grid, .testimonials-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .cta { grid-template-columns: 1fr; text-align: center; }
-            .cta-image { display: none; }
-            .cta-content p { margin-left: auto; margin-right: auto; }
-            nav { padding: 1rem 2rem; }
-            .nav-links { display: none; }
+            .hero-images { display: none; }
+            .hero-bg-pattern { width: 100%; clip-path: polygon(0 70%, 100% 50%, 100% 100%, 0% 100%); opacity: 0.1; }
+            .hero-content { max-width: 100%; text-align: center; }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .hero-ctas { justify-content: center; }
+            .hero-trust { justify-content: center; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .why-us-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .team-grid { grid-template-columns: 1fr 1fr; }
+            .test-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+            .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: auto; }
+            .gallery-item { height: 200px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nav-menu { display: none; }
+            .mobile-toggle { display: block; }
         }
-
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-images { grid-template-columns: 1fr; }
-            .hero-img:nth-child(2) { transform: none; }
-            .about-images { grid-template-columns: 1fr; }
-            .about-img:nth-child(2) { transform: none; }
-            .about-features { grid-template-columns: 1fr; }
+        @media (max-width: 640px) {
+            .services-grid, .team-grid, .stats-bar { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; }
-            footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .cta-box { padding: 3rem 2rem; }
+            .cta-info { flex-direction: column; gap: 1rem; align-items: center; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <div class="logo-icon">
-                <img src="https://api.iconify.design/lucide:smile.svg" alt="">
-            </div>
-            <div class="logo-text">Bright Smile</div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
+
+    <nav id="navbar">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">&#x1F9B7;</div>
+            <div class="nav-logo-text">First <span>Dental</span></div>
+        </a>
+        <ul class="nav-menu">
             <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#team">Our Team</a></li>
             <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#gallery">Gallery</a></li>
         </ul>
-        <button class="nav-cta">Book Appointment</button>
+        <a href="#contact" class="nav-btn">Book Appointment &#8594;</a>
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('show')">&#9776;</button>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <img src="https://api.iconify.design/lucide:award.svg" alt="">
-                Voted #1 Family Dentist 2024
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-content fade-up">
+            <div class="hero-badge">&#9733; Award-Winning Dental Practice</div>
+            <h1>Beautiful Smiles Start With <em>Expert Care</em></h1>
+            <p>Experience gentle, personalized dental care using the latest technology. From routine checkups to complete smile makeovers, we're here for your whole family.</p>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn-hero">Schedule Your Visit &#8594;</a>
+                <a href="#services" class="btn-hero-outline">Explore Services</a>
             </div>
-            <h1>Your Smile Deserves <span>The Best Care</span></h1>
-            <p>Modern, gentle dentistry for the whole family. We combine advanced technology with compassionate care to make every visit comfortable and stress-free.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">
-                    Schedule Visit
-                    <img src="https://api.iconify.design/lucide:arrow-right.svg" alt="" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
-                </a>
-                <a href="#gallery" class="btn-secondary">Virtual Tour</a>
+            <div class="hero-trust">
+                <div class="hero-trust-item">
+                    <div class="number">15+</div>
+                    <div class="label">Years of Excellence</div>
+                </div>
+                <div class="hero-trust-item">
+                    <div class="number">10K+</div>
+                    <div class="label">Happy Patients</div>
+                </div>
+                <div class="hero-trust-item">
+                    <div class="number">4.9</div>
+                    <div class="label">Google Rating</div>
+                </div>
             </div>
         </div>
-        <div class="hero-images">
-            <div class="hero-img"></div>
-            <div class="hero-img"></div>
-            <div class="hero-img"></div>
+        <div class="hero-images fade-up-delay">
+            <div class="hero-img hero-img-1"></div>
+            <div class="hero-img hero-img-2"></div>
+            <div class="hero-img hero-img-3">
+                <div>
+                    <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="rating-text">4.9 out of 5</div>
+                    <div class="rating-sub">Based on 500+ reviews</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="about" id="about">
-        <div class="about-grid">
-            <div class="about-content">
-                <h2>Modern Care, <span>Timeless Smiles</span></h2>
-                <p>For over 15 years, Bright Smile Dental has been the trusted choice for families throughout the community. We believe everyone deserves a healthy, beautiful smile.</p>
-                <p>Our state-of-the-art facility combines the latest dental technology with a warm, welcoming environment. From routine cleanings to complex procedures, we provide personalized care tailored to your unique needs.</p>
-                <div class="about-features">
-                    <div class="about-feature">
-                        <img src="https://api.iconify.design/lucide:clock.svg" alt="">
-                        <span>Same-Day Appointments</span>
-                    </div>
-                    <div class="about-feature">
-                        <img src="https://api.iconify.design/lucide:heart.svg" alt="">
-                        <span>Gentle & Caring</span>
-                    </div>
-                    <div class="about-feature">
-                        <img src="https://api.iconify.design/lucide:shield-check.svg" alt="">
-                        <span>Insurance Accepted</span>
-                    </div>
-                    <div class="about-feature">
-                        <img src="https://api.iconify.design/lucide:zap.svg" alt="">
-                        <span>Latest Technology</span>
-                    </div>
-                </div>
-            </div>
-            <div class="about-images">
-                <div class="about-img"></div>
-                <div class="about-img"></div>
-                <div class="about-img-full"></div>
-            </div>
-        </div>
-    </section>
+    <div class="stats-bar">
+        <div class="stat-item"><div class="stat-number">15<span>+</span></div><div class="stat-label">Years Experience</div></div>
+        <div class="stat-item"><div class="stat-number">10,000<span>+</span></div><div class="stat-label">Patients Served</div></div>
+        <div class="stat-item"><div class="stat-number">98<span>%</span></div><div class="stat-label">Patient Satisfaction</div></div>
+        <div class="stat-item"><div class="stat-number">24<span>/7</span></div><div class="stat-label">Emergency Care</div></div>
+    </div>
 
     <section class="services" id="services">
-        <div class="section-header">
-            <span class="section-tag">Our Services</span>
-            <h2 class="section-title">Comprehensive Dental Care</h2>
-        </div>
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-heading">Comprehensive Dental Services</h2>
+        <p class="section-sub">From preventive care to advanced cosmetic procedures, we provide everything your smile needs under one roof.</p>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-image service-1-img"></div>
-                <div class="service-content">
-                    <div class="service-icon">
-                        <img src="https://api.iconify.design/lucide:sparkles.svg" alt="">
-                    </div>
-                    <h3>Teeth Whitening</h3>
-                    <p>Professional whitening treatments that brighten your smile safely and effectively in just one visit.</p>
-                </div>
+            <div class="service-card"><div class="service-icon-wrap">&#128171;</div><h3>General Dentistry</h3><p>Routine checkups, cleanings, fillings, and preventive care to keep your smile healthy for life.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#10024;</div><h3>Cosmetic Dentistry</h3><p>Veneers, bonding, and whitening treatments to give you the confident, radiant smile you deserve.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#129463;</div><h3>Dental Implants</h3><p>Permanent tooth replacement that looks, feels, and functions just like your natural teeth.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#128108;</div><h3>Invisalign</h3><p>Straighten your teeth discreetly with clear aligners. Custom treatment plans, stunning results.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#128118;</div><h3>Pediatric Care</h3><p>Gentle, fun dental care for kids in a warm environment that builds lifelong healthy habits.</p></div>
+            <div class="service-card"><div class="service-icon-wrap">&#128656;</div><h3>Emergency Services</h3><p>Same-day emergency appointments available. We're here when you need us most.</p></div>
+        </div>
+    </section>
+
+    <section class="why-us" id="about">
+        <div class="why-us-grid">
+            <div class="why-us-images">
+                <div class="why-img-main"></div>
+                <div class="why-img-float"></div>
+                <div class="why-badge"><div class="why-badge-icon">&#127942;</div><div class="why-badge-text"><div class="val">Top Rated</div><div class="lab">Best Dentist 2025</div></div></div>
             </div>
-            <div class="service-card">
-                <div class="service-image service-2-img"></div>
-                <div class="service-content">
-                    <div class="service-icon">
-                        <img src="https://api.iconify.design/lucide:wrench.svg" alt="">
-                    </div>
-                    <h3>Restorative Care</h3>
-                    <p>Fillings, crowns, and bridges using the latest materials and techniques for lasting results.</p>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-image service-3-img"></div>
-                <div class="service-content">
-                    <div class="service-icon">
-                        <img src="https://api.iconify.design/lucide:baby.svg" alt="">
-                    </div>
-                    <h3>Pediatric Dentistry</h3>
-                    <p>Gentle, fun dental care for kids that builds healthy habits and positive associations.</p>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-image service-4-img"></div>
-                <div class="service-content">
-                    <div class="service-icon">
-                        <img src="https://api.iconify.design/lucide:align-center.svg" alt="">
-                    </div>
-                    <h3>Invisalign</h3>
-                    <p>Straighten your teeth discreetly with clear aligners. Custom treatment plans for perfect results.</p>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-image service-5-img"></div>
-                <div class="service-content">
-                    <div class="service-icon">
-                        <img src="https://api.iconify.design/lucide:circle-dot.svg" alt="">
-                    </div>
-                    <h3>Dental Implants</h3>
-                    <p>Permanent tooth replacement that looks, feels, and functions like your natural teeth.</p>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-image service-6-img"></div>
-                <div class="service-content">
-                    <div class="service-icon">
-                        <img src="https://api.iconify.design/lucide:shield.svg" alt="">
-                    </div>
-                    <h3>Preventive Care</h3>
-                    <p>Regular cleanings, exams, and screenings to keep your smile healthy for life.</p>
+            <div class="why-us-content">
+                <div class="section-label">Why Choose Us</div>
+                <h2>Where Technology Meets <em>Compassion</em></h2>
+                <p>We've invested in the latest dental technology and assembled a team of specialists who genuinely care about your comfort and results.</p>
+                <div class="why-features">
+                    <div class="why-feature"><div class="why-feature-icon">&#128300;</div><div><h4>Advanced Technology</h4><p>Digital X-rays, 3D imaging, and laser treatments for precise, comfortable care.</p></div></div>
+                    <div class="why-feature"><div class="why-feature-icon">&#128147;</div><div><h4>Anxiety-Free Experience</h4><p>Sedation options, noise-canceling headphones, and a spa-like atmosphere.</p></div></div>
+                    <div class="why-feature"><div class="why-feature-icon">&#128197;</div><div><h4>Flexible Scheduling</h4><p>Early morning, evening, and weekend appointments. Online booking available 24/7.</p></div></div>
+                    <div class="why-feature"><div class="why-feature-icon">&#128179;</div><div><h4>Transparent Pricing</h4><p>No surprises. We accept most insurance plans and offer flexible payment options.</p></div></div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="team" id="team">
-        <div class="section-header">
-            <span class="section-tag">Meet Our Team</span>
-            <h2 class="section-title">Experienced & Caring Professionals</h2>
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <div class="section-label" style="padding-left: 0; display: block;"><span style="margin-left: 2.5rem;">Our Doctors</span></div>
+            <h2 class="section-heading">Meet Your Care Team</h2>
+            <p class="section-sub" style="margin-left: auto; margin-right: auto;">Board-certified specialists with decades of combined experience and thousands of transformed smiles.</p>
         </div>
         <div class="team-grid">
             <div class="team-card">
-                <div class="team-img team-1-img"></div>
-                <h3>Dr. Emily Chen</h3>
-                <p class="role">Lead Dentist, DDS</p>
-                <p>15+ years of experience specializing in cosmetic and restorative dentistry. Harvard Dental School graduate.</p>
+                <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=85&auto=format&fit=crop');"></div>
+                <h3>Dr. Emily Chen</h3><div class="role">Lead Dentist, DDS</div><p>Harvard-trained with 15+ years specializing in cosmetic and restorative dentistry.</p>
             </div>
             <div class="team-card">
-                <div class="team-img team-2-img"></div>
-                <h3>Dr. Michael Rodriguez</h3>
-                <p class="role">Pediatric Specialist</p>
-                <p>Dedicated to making dental visits fun for children. Board certified in pediatric dentistry.</p>
+                <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=85&auto=format&fit=crop');"></div>
+                <h3>Dr. Michael Torres</h3><div class="role">Implant Specialist</div><p>Over 3,000 successful implant procedures. Board certified in oral surgery.</p>
             </div>
             <div class="team-card">
-                <div class="team-img team-3-img"></div>
-                <h3>Dr. Sarah Thompson</h3>
-                <p class="role">Orthodontist</p>
-                <p>Invisalign Diamond Provider with expertise in creating beautiful, healthy smiles for all ages.</p>
+                <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=85&auto=format&fit=crop');"></div>
+                <h3>Dr. Sarah Kim</h3><div class="role">Orthodontist</div><p>Invisalign Diamond Provider. Creating beautiful, healthy smiles for all ages.</p>
             </div>
         </div>
     </section>
 
     <section class="testimonials" id="reviews">
-        <div class="section-header">
-            <span class="section-tag">Patient Stories</span>
-            <h2 class="section-title">What Our Patients Say</h2>
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <div class="section-label" style="padding-left: 0; display: block;"><span style="margin-left: 2.5rem;">Testimonials</span></div>
+            <h2 class="section-heading">What Our Patients Say</h2>
+            <p class="section-sub" style="margin-left: auto; margin-right: auto;">Real stories from real patients who trust us with their smiles.</p>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                </div>
-                <p>"I used to dread going to the dentist, but Bright Smile changed everything. The team is so gentle and caring. Now I actually look forward to my visits!"</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar author-1-img"></div>
-                    <div class="author-info">
-                        <h4>Maria K.</h4>
-                        <span>Patient for 3 years</span>
-                    </div>
-                </div>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"I was terrified of dentists for 20 years. First Dental completely changed that. The team is incredibly gentle, and the sedation options made it stress-free."</blockquote>
+                <div class="test-author"><div class="test-avatar" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80&auto=format&fit=crop');"></div><div><div class="test-name">Maria K.</div><div class="test-role">Patient for 3 years</div></div></div>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                </div>
-                <p>"Dr. Chen is amazing with my kids. She makes dental visits fun and educational. My children actually ask when their next appointment is!"</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar author-2-img"></div>
-                    <div class="author-info">
-                        <h4>James T.</h4>
-                        <span>Parent of 2</span>
-                    </div>
-                </div>
+            <div class="test-card">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Dr. Chen did my veneers and the results are absolutely stunning. People constantly compliment my smile now. Worth every penny!"</blockquote>
+                <div class="test-author"><div class="test-avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80&auto=format&fit=crop');"></div><div><div class="test-name">James T.</div><div class="test-role">Cosmetic Patient</div></div></div>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                    <img src="https://api.iconify.design/lucide:star.svg" alt="">
-                </div>
-                <p>"The Invisalign treatment was life-changing. The whole process was smooth, and the results exceeded my expectations. Best decision ever!"</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar author-3-img"></div>
-                    <div class="author-info">
-                        <h4>Ashley L.</h4>
-                        <span>Invisalign Patient</span>
-                    </div>
-                </div>
+            <div class="test-card">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"My kids ask to go to the dentist! The pediatric team makes it so fun. The facility is gorgeous, like a spa. Online booking is a lifesaver."</blockquote>
+                <div class="test-author"><div class="test-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80&auto=format&fit=crop');"></div><div><div class="test-name">Ashley P.</div><div class="test-role">Parent of 2</div></div></div>
             </div>
         </div>
     </section>
 
     <section class="gallery" id="gallery">
-        <div class="section-header">
-            <span class="section-tag">Our Facility</span>
-            <h2 class="section-title">Modern & Comfortable Environment</h2>
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <div class="section-label" style="padding-left: 0; display: block;"><span style="margin-left: 2.5rem;">Our Space</span></div>
+            <h2 class="section-heading">A Modern, Relaxing Environment</h2>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-img"></div>
-            <div class="gallery-img"></div>
-            <div class="gallery-img"></div>
-            <div class="gallery-img"></div>
+            <div class="gallery-item"></div><div class="gallery-item"></div><div class="gallery-item"></div>
+            <div class="gallery-item"></div><div class="gallery-item"></div><div class="gallery-item"></div>
         </div>
     </section>
 
-    <section class="cta" id="contact">
-        <div class="cta-image"></div>
-        <div class="cta-content">
+    <section class="cta-section" id="contact">
+        <div class="cta-box">
             <h2>Ready for Your Best Smile?</h2>
-            <p>New patients receive a complimentary consultation and treatment plan. Book your appointment today and experience the Bright Smile difference!</p>
-            <button class="cta-btn">
-                Book Free Consultation
-                <img src="https://api.iconify.design/lucide:calendar.svg" alt="">
-            </button>
+            <p>New patients receive a complimentary consultation and personalized treatment plan. Schedule your appointment today.</p>
+            <button class="cta-main-btn">Book Free Consultation &#8594;</button>
+            <div class="cta-info">
+                <div class="cta-info-item">&#128222; (555) 123-4567</div>
+                <div class="cta-info-item">&#128205; 123 Main Street, Suite 100</div>
+                <div class="cta-info-item">&#128338; Mon-Sat 8am-6pm</div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="logo">
-            <div class="logo-icon">
-                <img src="https://api.iconify.design/lucide:smile.svg" alt="">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo" style="margin-bottom: 0.5rem;">
+                    <div class="nav-logo-icon">&#x1F9B7;</div>
+                    <div class="nav-logo-text" style="color: white;">First <span>Dental</span></div>
+                </a>
+                <p>Providing exceptional dental care with a gentle touch. Your comfort and confidence are our priority.</p>
             </div>
-            <div class="logo-text">Bright Smile</div>
+            <div class="footer-col"><h4>Services</h4><a href="#">General Dentistry</a><a href="#">Cosmetic Dentistry</a><a href="#">Dental Implants</a><a href="#">Invisalign</a><a href="#">Emergency Care</a></div>
+            <div class="footer-col"><h4>Practice</h4><a href="#">About Us</a><a href="#">Our Team</a><a href="#">Technology</a><a href="#">Patient Forms</a><a href="#">Insurance</a></div>
+            <div class="footer-col"><h4>Contact</h4><a href="#">(555) 123-4567</a><a href="#">info@firstdental.com</a><a href="#">123 Main Street</a><a href="#">Suite 100</a></div>
         </div>
-        <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Careers</a>
+        <div class="footer-bottom">
+            <p>&copy; 2025 First Dental. All rights reserved.</p>
+            <div class="footer-social"><a href="#">f</a><a href="#">in</a><a href="#">ig</a><a href="#">yt</a></div>
         </div>
-        <div style="color: var(--gray-600); font-size: 0.85rem;">© 2024 Bright Smile Dental</div>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.service-card, .team-card, .test-card, .why-feature, .stat-item, .gallery-item').forEach(el => {
+            el.style.opacity = '0'; el.style.transform = 'translateY(30px)'; el.style.transition = 'all 0.6s ease-out'; observer.observe(el);
+        });
+        document.querySelectorAll('.services-grid, .team-grid, .test-grid').forEach(grid => {
+            Array.from(grid.children).forEach((card, i) => { card.style.transitionDelay = `${i * 0.1}s`; });
+        });
+    </script>
 </body>
 </html>
