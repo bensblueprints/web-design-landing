@@ -102,10 +102,10 @@
         .hero-bg::after{
             content:'';position:absolute;inset:0;
             background:linear-gradient(135deg,
-                rgba(10,52,99,.92) 0%,
-                rgba(13,74,135,.86) 35%,
-                rgba(26,95,168,.8) 70%,
-                rgba(45,125,210,.75) 100%
+                rgba(10,52,99,.88) 0%,
+                rgba(13,74,135,.78) 35%,
+                rgba(26,95,168,.68) 70%,
+                rgba(45,125,210,.6) 100%
             );
         }
         .hero-inner{
@@ -332,6 +332,39 @@
         .cta-box p{font-size:17px;color:rgba(255,255,255,.75);max-width:440px;margin:0 auto 36px;line-height:1.75}
         .cta-info{display:flex;justify-content:center;gap:36px;margin-top:32px;flex-wrap:wrap}
         .cta-info span{font-size:14px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:6px}
+
+        /* ══════════════════ INSURANCE STRIP ══════════════════ */
+        .insurance{padding:60px 4%;background:var(--gray-50);border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100)}
+        .insurance-inner{max-width:1000px;margin:0 auto;text-align:center}
+        .insurance .eyebrow{margin-bottom:24px;color:var(--gray-400)}
+        .insurance-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:center}
+        .ins-badge{
+            padding:10px 22px;border-radius:100px;font-size:13px;font-weight:600;
+            color:var(--gray-600);background:var(--white);
+            border:1px solid var(--gray-200);transition:all .3s;
+        }
+        .ins-badge:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,95,168,.08)}
+
+        /* ══════════════════ MAP SECTION ══════════════════ */
+        .map-section{padding:0;background:var(--white)}
+        .map-grid{display:grid;grid-template-columns:1fr 1fr;max-width:100%}
+        .map-info{
+            display:flex;flex-direction:column;justify-content:center;
+            padding:72px 6%;background:var(--gray-900);color:var(--white);
+        }
+        .map-info h2{font-family:var(--serif);font-size:clamp(26px,3vw,38px);margin-bottom:8px}
+        .map-info .sub{font-size:15px;color:var(--gray-400);margin-bottom:36px}
+        .map-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+        .map-detail-icon{
+            width:40px;height:40px;min-width:40px;border-radius:10px;
+            background:rgba(255,255,255,.06);display:flex;align-items:center;
+            justify-content:center;font-size:18px;
+        }
+        .map-detail h4{font-size:14px;font-weight:700;color:var(--white);margin-bottom:2px}
+        .map-detail p{font-size:13px;color:var(--gray-400);line-height:1.6}
+        .map-embed{min-height:400px;background:var(--gray-200)}
+        .map-embed iframe{width:100%;height:100%;min-height:400px;border:0;display:block}
+        @media(max-width:768px){.map-grid{grid-template-columns:1fr}.map-info{padding:48px 6%}}
 
         /* ══════════════════ FOOTER ══════════════════ */
         .footer{background:var(--gray-900);color:var(--white);padding:72px 4% 32px}
@@ -632,6 +665,55 @@
     </div>
 </section>
 
+<!-- ══════════ INSURANCE ══════════ -->
+<section class="insurance">
+    <div class="insurance-inner">
+        <div class="eyebrow reveal">We Accept Most Major Insurance</div>
+        <div class="insurance-logos reveal">
+            <div class="ins-badge">Delta Dental</div>
+            <div class="ins-badge">Cigna</div>
+            <div class="ins-badge">Aetna</div>
+            <div class="ins-badge">MetLife</div>
+            <div class="ins-badge">Blue Cross Blue Shield</div>
+            <div class="ins-badge">United Healthcare</div>
+            <div class="ins-badge">Guardian</div>
+            <div class="ins-badge">Humana</div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════ MAP + CONTACT ══════════ -->
+<section class="map-section" id="location">
+    <div class="map-grid">
+        <div class="map-info">
+            <h2>Visit Our Office</h2>
+            <p class="sub">Conveniently located in the Bellona-Gittings neighborhood.</p>
+            <div class="map-detail">
+                <div class="map-detail-icon">&#128205;</div>
+                <div><h4>Address</h4><p>5710 Bellona Ave, Suite 101<br>Baltimore, MD 21212</p></div>
+            </div>
+            <div class="map-detail">
+                <div class="map-detail-icon">&#128222;</div>
+                <div><h4>Phone</h4><p>(410) 323-2875</p></div>
+            </div>
+            <div class="map-detail">
+                <div class="map-detail-icon">&#128197;</div>
+                <div>
+                    <h4>Office Hours</h4>
+                    <p>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 2:00 PM<br>Sun: Closed</p>
+                </div>
+            </div>
+            <div class="map-detail">
+                <div class="map-detail-icon">&#9993;</div>
+                <div><h4>Email</h4><p>FirstDentalMD@gmail.com</p></div>
+            </div>
+        </div>
+        <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.8!2d-76.6244!3d39.3571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c804e23b3e0a0f%3A0x4f5e7b48e2c6a8c0!2s5710%20Bellona%20Ave%2C%20Baltimore%2C%20MD%2021212!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
 <!-- ══════════ FINAL CTA ══════════ -->
 <section class="final-cta" id="contact">
     <div class="cta-box reveal">
@@ -667,9 +749,10 @@
             <a href="#">5710 Bellona Ave, Ste 101</a>
             <a href="#">Baltimore, MD 21212</a>
             <a href="mailto:FirstDentalMD@gmail.com">FirstDentalMD@gmail.com</a>
+            <a href="#" style="margin-top:8px;color:var(--gray-500);font-size:12px;line-height:1.5">Mon-Fri: 8am-5pm<br>Sat: 9am-2pm · Sun: Closed</a>
         </div>
     </div>
-    <div class="footer-bottom">&copy; 2025 First Dental. All rights reserved.</div>
+    <div class="footer-bottom">&copy; 2025 First Dental. All rights reserved. · Built by <a href="https://advancedmarketing.co" style="color:var(--primary-light);font-weight:600" target="_blank">Advanced Marketing</a></div>
 </footer>
 
 <script>
@@ -699,6 +782,30 @@ document.querySelectorAll('.doc-photo').forEach(img=>{
         wrap.appendChild(placeholder);
     };
 });
+
+// Counter animation for stats
+const counterObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+        if(!e.isIntersecting)return;
+        e.target.querySelectorAll('.stat-num').forEach(num=>{
+            const text=num.textContent;
+            const match=text.match(/^(\d+)/);
+            if(!match)return;
+            const target=parseInt(match[1]);
+            const suffix=text.replace(match[1],'');
+            let current=0;
+            const step=Math.max(1,Math.floor(target/40));
+            const timer=setInterval(()=>{
+                current+=step;
+                if(current>=target){current=target;clearInterval(timer)}
+                num.innerHTML=current+suffix;
+            },30);
+        });
+        counterObserver.unobserve(e.target);
+    });
+},{threshold:.5});
+const statsBar=document.querySelector('.stats-bar');
+if(statsBar)counterObserver.observe(statsBar);
 
 // Min date for booking
 const dateInput=document.querySelector('input[type="date"]');
