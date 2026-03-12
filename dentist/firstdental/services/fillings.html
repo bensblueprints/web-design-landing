@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooth-Colored Dental Fillings | First Dental Baltimore</title>
+    <meta name="description" content="Natural-looking composite fillings that restore your teeth seamlessly. Gentle, mercury-free dentistry at First Dental Baltimore. Call (410) 323-2875.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#1a6db5;--primary-light:#2d8fd6;--primary-dark:#0f5a96;--primary-deeper:#0b3d6a;
+            --accent:#d4a44c;--accent-light:#e4bd72;--accent-glow:rgba(212,164,76,.15);
+            --white:#ffffff;--off-white:#f8fafb;--cream:#faf8f5;
+            --g50:#f8fafc;--g100:#f1f5f9;--g200:#e2e8f0;--g300:#cbd5e1;
+            --g400:#94a3b8;--g500:#64748b;--g600:#475569;--g700:#334155;
+            --g800:#1e293b;--g900:#0f172a;
+            --r:16px;--rl:24px;--rxl:32px;
+            --sans:'DM Sans',system-ui,-apple-system,sans-serif;
+            --display:'Playfair Display',Georgia,serif;
+            --shadow-subtle:0 1px 3px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.02);
+            --shadow-card:0 4px 24px -4px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);
+            --shadow-elevated:0 20px 60px -15px rgba(0,0,0,.12);
+            --shadow-glow:0 8px 40px -8px rgba(26,109,181,.2);
+        }
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        body{font-family:var(--sans);color:var(--g800);line-height:1.65;background:var(--white);overflow-x:hidden}
+        img{max-width:100%;display:block}
+        a{text-decoration:none;color:inherit}
+
+        /* Animations */
+        .fade-up{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+        .fade-up.in{opacity:1;transform:none}
+        .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+        /* Nav */
+        .nav{
+            position:fixed;top:0;left:0;right:0;z-index:1000;
+            display:flex;align-items:center;justify-content:space-between;
+            padding:16px 4%;transition:all .4s cubic-bezier(.16,1,.3,1);
+        }
+        .nav.scrolled{
+            padding:10px 4%;background:rgba(255,255,255,.97);
+            backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+            box-shadow:0 1px 0 rgba(0,0,0,.04),0 4px 24px rgba(0,0,0,.04);
+        }
+        .nav-logo{display:flex;align-items:center;gap:10px}
+        .nav-logo-text{font-family:var(--display);font-size:22px;font-weight:700;color:var(--white);transition:color .4s}
+        .nav-logo-text span{color:var(--accent-light);transition:color .4s}
+        .nav.scrolled .nav-logo-text{color:var(--g900)}
+        .nav.scrolled .nav-logo-text span{color:var(--primary)}
+        .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+        .nav-links a{font-size:14px;font-weight:500;color:rgba(255,255,255,.75);transition:all .3s}
+        .nav-links a:hover{color:var(--white)}
+        .nav.scrolled .nav-links a{color:var(--g500)}
+        .nav.scrolled .nav-links a:hover{color:var(--primary)}
+        .nav-phone{
+            font-size:14px;font-weight:700;padding:10px 22px;border-radius:100px;
+            color:var(--white);border:1.5px solid rgba(255,255,255,.25);transition:all .4s;
+        }
+        .nav-phone:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
+        .nav.scrolled .nav-phone{color:var(--primary);border-color:var(--primary)}
+        .nav.scrolled .nav-phone:hover{background:var(--primary);color:var(--white)}
+
+        /* Hero */
+        .hero{position:relative;min-height:60vh;display:flex;align-items:center;padding:140px 4% 80px;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;z-index:0}
+        .hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.85)}
+        .hero-bg::after{
+            content:'';position:absolute;inset:0;
+            background:linear-gradient(135deg,rgba(11,61,106,.92) 0%,rgba(15,90,150,.8) 40%,rgba(26,109,181,.7) 100%);
+        }
+        .hero-content{position:relative;z-index:2;max-width:800px;margin:0 auto;text-align:center}
+        .breadcrumb{
+            display:inline-flex;align-items:center;gap:8px;
+            font-size:13px;font-weight:500;color:rgba(255,255,255,.6);margin-bottom:24px;
+        }
+        .breadcrumb a{color:rgba(255,255,255,.6);transition:color .3s}
+        .breadcrumb a:hover{color:var(--white)}
+        .breadcrumb svg{width:14px;height:14px;stroke:rgba(255,255,255,.4);fill:none;stroke-width:2;stroke-linecap:round}
+        .hero h1{
+            font-family:var(--display);font-size:clamp(36px,5vw,58px);
+            font-weight:700;line-height:1.1;color:var(--white);margin-bottom:20px;letter-spacing:-.03em;
+        }
+        .hero h1 em{
+            font-style:italic;font-weight:500;
+            background:linear-gradient(135deg,var(--accent-light),var(--accent));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+        }
+        .hero-sub{font-size:18px;line-height:1.8;color:rgba(255,255,255,.72);max-width:600px;margin:0 auto 36px}
+        .btn{
+            display:inline-flex;align-items:center;justify-content:center;gap:8px;
+            padding:15px 36px;border-radius:100px;font-weight:700;font-size:15px;
+            border:none;cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1);
+            font-family:var(--sans);letter-spacing:-.01em;position:relative;overflow:hidden;
+        }
+        .btn::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:transform .5s}
+        .btn:hover::after{transform:translateX(100%)}
+        .btn-primary{background:var(--primary);color:var(--white);box-shadow:var(--shadow-glow)}
+        .btn-primary:hover{background:var(--primary-light);transform:translateY(-2px);box-shadow:0 12px 40px -8px rgba(26,109,181,.3)}
+        .btn-accent{background:var(--accent);color:var(--white);box-shadow:0 4px 20px rgba(212,164,76,.3)}
+        .btn-accent:hover{background:var(--accent-light);transform:translateY(-2px)}
+        .btn-outline-dark{background:transparent;color:var(--primary);border:1.5px solid var(--g200);padding:14px 32px}
+        .btn-outline-dark:hover{border-color:var(--primary);background:rgba(26,109,181,.04)}
+        .btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+        .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+        /* Intro */
+        .intro{padding:100px 4%;background:var(--white)}
+        .intro-inner{max-width:800px;margin:0 auto;text-align:center}
+        .intro-inner .eyebrow{
+            display:inline-flex;align-items:center;gap:8px;
+            font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+            color:var(--primary);margin-bottom:16px;
+        }
+        .intro-inner .eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px}
+        .intro-inner h2{
+            font-family:var(--display);font-size:clamp(28px,3.5vw,42px);color:var(--g900);
+            line-height:1.15;margin-bottom:24px;letter-spacing:-.02em;
+        }
+        .intro-inner h2 em{font-style:italic;color:var(--primary)}
+        .intro-inner p{font-size:17px;color:var(--g500);line-height:1.9;max-width:680px;margin:0 auto}
+
+        /* Benefits */
+        .benefits{padding:80px 4% 100px;background:var(--g50)}
+        .benefits-inner{max-width:1100px;margin:0 auto}
+        .benefits-header{text-align:center;margin-bottom:60px}
+        .benefits-header .eyebrow{
+            display:inline-flex;align-items:center;gap:8px;
+            font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+            color:var(--primary);margin-bottom:16px;
+        }
+        .benefits-header .eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px}
+        .benefits-header h2{
+            font-family:var(--display);font-size:clamp(28px,3.5vw,42px);color:var(--g900);
+            line-height:1.15;letter-spacing:-.02em;
+        }
+        .benefits-header h2 em{font-style:italic;color:var(--primary)}
+        .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+        .benefit-card{
+            background:var(--white);border-radius:var(--rl);padding:36px;
+            box-shadow:var(--shadow-card);transition:all .4s cubic-bezier(.16,1,.3,1);
+            border:1px solid rgba(0,0,0,.03);
+        }
+        .benefit-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+        .benefit-icon{
+            width:52px;height:52px;border-radius:14px;
+            background:linear-gradient(135deg,rgba(26,109,181,.08),rgba(26,109,181,.04));
+            display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+        }
+        .benefit-icon svg{width:24px;height:24px;stroke:var(--primary);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+        .benefit-card h3{font-family:var(--display);font-size:20px;font-weight:700;color:var(--g900);margin-bottom:10px}
+        .benefit-card p{font-size:15px;color:var(--g500);line-height:1.75}
+
+        /* Process */
+        .process{padding:100px 4%;background:var(--white)}
+        .process-inner{max-width:900px;margin:0 auto}
+        .process-header{text-align:center;margin-bottom:64px}
+        .process-header .eyebrow{
+            display:inline-flex;align-items:center;gap:8px;
+            font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+            color:var(--primary);margin-bottom:16px;
+        }
+        .process-header .eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px}
+        .process-header h2{
+            font-family:var(--display);font-size:clamp(28px,3.5vw,42px);color:var(--g900);
+            line-height:1.15;letter-spacing:-.02em;
+        }
+        .process-header h2 em{font-style:italic;color:var(--primary)}
+        .process-steps{display:flex;flex-direction:column;gap:0;position:relative}
+        .process-steps::before{
+            content:'';position:absolute;left:31px;top:32px;bottom:32px;width:2px;
+            background:linear-gradient(180deg,var(--primary),var(--accent));border-radius:2px;
+        }
+        .step{display:flex;gap:28px;align-items:flex-start;padding:28px 0;position:relative}
+        .step-num{
+            flex-shrink:0;width:64px;height:64px;border-radius:50%;
+            background:linear-gradient(135deg,var(--primary),var(--primary-light));
+            color:var(--white);font-family:var(--display);font-weight:800;font-size:18px;
+            display:flex;align-items:center;justify-content:center;
+            box-shadow:0 4px 20px rgba(26,109,181,.25);position:relative;z-index:2;
+        }
+        .step-content h3{font-family:var(--display);font-size:22px;font-weight:700;color:var(--g900);margin-bottom:8px}
+        .step-content p{font-size:16px;color:var(--g500);line-height:1.75;max-width:600px}
+
+        /* FAQ */
+        .faq{padding:80px 4% 100px;background:var(--g50)}
+        .faq-inner{max-width:760px;margin:0 auto}
+        .faq-header{text-align:center;margin-bottom:48px}
+        .faq-header .eyebrow{
+            display:inline-flex;align-items:center;gap:8px;
+            font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+            color:var(--primary);margin-bottom:16px;
+        }
+        .faq-header .eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px}
+        .faq-header h2{
+            font-family:var(--display);font-size:clamp(28px,3.5vw,42px);color:var(--g900);
+            line-height:1.15;letter-spacing:-.02em;
+        }
+        .faq-header h2 em{font-style:italic;color:var(--primary)}
+        .faq-item{
+            background:var(--white);border-radius:var(--r);margin-bottom:12px;
+            box-shadow:var(--shadow-subtle);border:1px solid rgba(0,0,0,.03);overflow:hidden;
+        }
+        .faq-q{
+            padding:22px 28px;font-size:16px;font-weight:600;color:var(--g800);
+            cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+            transition:background .2s;
+        }
+        .faq-q:hover{background:var(--g50)}
+        .faq-q svg{width:20px;height:20px;stroke:var(--g400);fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;transition:transform .3s}
+        .faq-item.open .faq-q svg{transform:rotate(180deg)}
+        .faq-a{
+            max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1);
+        }
+        .faq-item.open .faq-a{max-height:300px}
+        .faq-a-inner{padding:0 28px 22px;font-size:15px;color:var(--g500);line-height:1.8}
+
+        /* CTA */
+        .cta-section{padding:80px 4%;background:var(--white)}
+        .cta-card{
+            max-width:900px;margin:0 auto;
+            background:linear-gradient(135deg,var(--primary-deeper) 0%,var(--primary) 50%,var(--primary-light) 100%);
+            border-radius:var(--rxl);padding:64px 48px;text-align:center;
+            box-shadow:0 24px 60px -12px rgba(26,109,181,.3);position:relative;overflow:hidden;
+        }
+        .cta-card::before{
+            content:'';position:absolute;inset:0;opacity:.04;
+            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .cta-card h2{
+            font-family:var(--display);font-size:clamp(28px,4vw,44px);font-weight:700;
+            color:var(--white);margin-bottom:16px;letter-spacing:-.02em;position:relative;
+        }
+        .cta-card p{font-size:17px;color:rgba(255,255,255,.7);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+        .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+        .btn-white{background:var(--white);color:var(--primary-dark);box-shadow:0 4px 20px rgba(0,0,0,.08)}
+        .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+        .btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.3)}
+        .btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
+
+        /* Footer */
+        .footer{background:var(--g900);color:var(--white);padding:72px 4% 32px}
+        .footer-inner{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto 56px}
+        .footer-logo{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:14px}
+        .footer-logo span{color:var(--primary-light)}
+        .footer-about{font-size:14px;color:var(--g400);line-height:1.75;max-width:260px}
+        .footer-col h4{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g400);margin-bottom:20px}
+        .footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.5);margin-bottom:12px;transition:color .25s}
+        .footer-col a:hover{color:var(--primary-light)}
+        .footer-bar{
+            max-width:1200px;margin:0 auto;padding-top:32px;border-top:1px solid rgba(255,255,255,.06);
+            text-align:center;font-size:13px;color:var(--g500);
+        }
+        .footer-bar a{color:var(--primary-light);font-weight:600}
+
+        /* Responsive */
+        @media(max-width:900px){
+            .nav-links{display:none}
+            .benefits-grid{grid-template-columns:1fr}
+            .footer-inner{grid-template-columns:1fr 1fr}
+        }
+        @media(max-width:600px){
+            .hero{min-height:50vh;padding:120px 4% 60px}
+            .hero h1{font-size:32px}
+            .hero-actions{flex-direction:column;align-items:center}
+            .step{flex-direction:column;align-items:center;text-align:center}
+            .process-steps::before{display:none}
+            .cta-card{padding:48px 24px}
+            .footer-inner{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+    <a href="../" class="nav-logo">
+        <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="white" fill-opacity=".12"/><path d="M20 8c-3 0-5.5 1-7 3.5C11.5 14 12 17 12 19c0 3 .5 5.5 2 7.5s3.5 3.5 6 3.5 4.5-1.5 6-3.5 2-4.5 2-7.5c0-2 .5-5-1-7.5S23 8 20 8z" fill="white" fill-opacity=".9"/><path d="M17 18c0-1 .5-3 3-3s3 2 3 3" stroke="#1a6db5" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="22" r="2" fill="#1a6db5"/></svg>
+        <div class="nav-logo-text">First <span>Dental</span></div>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#testimonials">Reviews</a></li>
+        <li><a href="../#booking">Book Now</a></li>
+    </ul>
+    <a href="tel:4103232875" class="nav-phone">(410) 323-2875</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&q=80&auto=format&fit=crop" alt="Fillings">
+    </div>
+    <div class="hero-content">
+        <div class="breadcrumb fade-up">
+            <a href="../">Home</a>
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            <a href="../#services">Services</a>
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            <span style="color:rgba(255,255,255,.9)">Fillings</span>
+        </div>
+        <h1>Restore Your Teeth with <em>Natural-Looking Fillings</em></h1>
+        <p class="hero-sub">Modern tooth-colored composites blend invisibly with your natural enamel — no one will ever know you had a cavity.</p>
+        <div class="hero-actions">
+            <a href="../#booking" class="btn btn-accent">Book an Appointment <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="tel:4103232875" class="btn btn-outline">Call (410) 323-2875</a>
+        </div>
+    </div>
+</section>
+
+<!-- Intro -->
+<section class="intro">
+    <div class="intro-inner">
+        <div class="eyebrow fade-up">About This Service</div>
+        <h2 class="fade-up">What to Expect from <em>Fillings</em></h2>
+        <p class="fade-up">Gone are the days of dark metal fillings that stand out every time you laugh. At First Dental, we use advanced composite resin materials that match your tooth's exact shade. These modern fillings bond directly to your tooth structure, providing a strong, durable, and virtually invisible restoration. The procedure is quick, comfortable, and preserves more of your natural tooth compared to traditional amalgam fillings.</p>
+    </div>
+</section>
+
+<!-- Benefits -->
+<section class="benefits">
+    <div class="benefits-inner">
+        <div class="benefits-header">
+            <div class="eyebrow fade-up">Why Choose Us</div>
+            <h2 class="fade-up">The First Dental <em>Difference</em></h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                <h3>Invisible Results</h3>
+                <p>Composite resin is shade-matched to your natural tooth color for a seamless, undetectable restoration.</p>
+            </div>
+            <div class="benefit-card fade-up d1">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+                <h3>Mercury-Free</h3>
+                <p>Our BPA-free composite fillings contain no mercury or metal — just safe, biocompatible materials.</p>
+            </div>
+            <div class="benefit-card fade-up d2">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                <h3>Quick & Comfortable</h3>
+                <p>Most fillings are completed in a single 30-45 minute visit with minimal discomfort.</p>
+            </div>
+            <div class="benefit-card fade-up d3">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547"/></svg></div>
+                <h3>Tooth-Preserving</h3>
+                <p>Composite bonds directly to enamel, meaning we remove less healthy tooth structure than metal fillings require.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+    <div class="process-inner">
+        <div class="process-header">
+            <div class="eyebrow fade-up">How It Works</div>
+            <h2 class="fade-up">Your <em>Treatment Journey</em></h2>
+        </div>
+        <div class="process-steps">
+            <div class="step fade-up">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <h3>Gentle Numbing</h3>
+                    <p>We apply topical anesthetic first, then use a precise local anesthetic so you feel nothing during the procedure.</p>
+                </div>
+            </div>
+            <div class="step fade-up d1">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <h3>Decay Removal</h3>
+                    <p>Using precision instruments, we carefully remove only the decayed portion of your tooth while preserving maximum healthy structure.</p>
+                </div>
+            </div>
+            <div class="step fade-up d2">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <h3>Composite Bonding</h3>
+                    <p>We layer tooth-colored composite resin, sculpt it to your bite, cure it with UV light, and polish for a natural finish.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="faq-inner">
+        <div class="faq-header">
+            <div class="eyebrow fade-up">Common Questions</div>
+            <h2 class="fade-up">Frequently Asked <em>Questions</em></h2>
+        </div>
+        <div class="faq-item fade-up">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                How long do composite fillings last?
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">With proper care, composite fillings typically last 7 to 15 years. We monitor them at each checkup and will let you know if a replacement is needed.</div></div>
+        </div>
+        <div class="faq-item fade-up d1">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                Can you replace my old metal fillings?
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Absolutely. Many patients choose to replace old amalgam fillings with tooth-colored composites for both aesthetic and health reasons. We evaluate each filling individually.</div></div>
+        </div>
+        <div class="faq-item fade-up d2">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                Will I feel pain during the procedure?
+                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">No. We use modern anesthetics that ensure you are completely comfortable throughout the procedure. Most patients report feeling only slight pressure.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-card fade-up">
+        <h2>Ready to Get Started?</h2>
+        <p>Schedule your fillings appointment today. Three board-certified dentists, one mission &mdash; your healthiest smile.</p>
+        <div class="cta-actions">
+            <a href="../#booking" class="btn btn-white">Book Online <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="tel:4103232875" class="btn btn-outline">Call (410) 323-2875</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo">First <span>Dental</span></div>
+            <p class="footer-about">Where care begins. Personalized, compassionate dental care in Baltimore, Maryland.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <a href="cleanings.html">Cleanings</a><a href="fillings.html">Fillings</a><a href="emergency.html">Emergency Care</a>
+            <a href="implants.html">Implants</a><a href="braces.html">Braces</a><a href="crowns.html">Crowns</a><a href="root-canals.html">Root Canals</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="tel:4103232875">(410) 323-2875</a>
+            <a href="https://maps.google.com/?q=6080+Falls+Rd+Suite+102+Baltimore+MD+21209" target="_blank">6080 Falls Rd, Suite 102<br>Baltimore, MD 21209</a>
+        </div>
+        <div class="footer-col">
+            <h4>Hours</h4>
+            <a>Mon – Fri: 8am – 5pm</a>
+            <a>Saturday: By Appt</a>
+            <a>Sunday: Closed</a>
+        </div>
+    </div>
+    <div class="footer-bar">&copy; 2025 First Dental. All rights reserved. &middot; Built by <a href="https://advancedmarketing.co" target="_blank">Advanced Marketing</a></div>
+</footer>
+
+<script>
+// Scroll-aware nav
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+nav.classList.toggle('scrolled', window.scrollY > 40);
+
+// Intersection Observer for fade-up
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
